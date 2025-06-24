@@ -1,0 +1,81 @@
+<div class="container min-h-screen  overflow-hidden">
+  <div class="flex items-center justify-center pt-20">
+    <form
+      [formGroup]="loginForm"
+      (submit)="onSubmit($event)"
+      class="shadow-md rounded-lg border border-gray-300 py-5 px-10 w-10/12 xl:w-1/2 flex flex-col"
+    >
+      <img src="assets/images/logo.png" class="w-40 mx-auto" />
+      <p class="text-3xl text-primary-main font-medium my-5 text-center">
+        Log In
+      </p>
+      <h3 class="text-sm text-blackShade-light font-normal mb-10 text-center">
+        Login now and begin use the application
+      </h3>
+      <div class="flex flex-col gap-2">
+        <div>
+          <app-standard-input-label> Email </app-standard-input-label>
+          <input
+            type="email"
+            pInputText
+            formControlName="email"
+            class="w-full"
+          />
+        </div>
+        <div>
+          <app-standard-input-label> Password </app-standard-input-label>
+          <input
+            type="password"
+            pInputText
+            formControlName="password"
+            class="w-full"
+          />
+        </div>
+      </div>
+      <span
+        class="text-sm text-primary-main font-medium text-end mt-4 cursor-pointer"
+        (click)="navigateToForgotPassword()"
+        >Forgot password?</span
+      >
+      <app-standard-button
+        label="Log In"
+        styleClass="primary w-full"
+        class="mt-2"
+        type="submit"
+      ></app-standard-button>
+
+      <span class="text-sm text-blackShade-light font-normal mt-4 text-center"
+        >Don't have any account?
+        <span
+          class="text-primary-main cursor-pointer font-medium"
+          (click)="navigateToSignUpForGuardian()"
+          >Sign Up</span
+        ></span
+      >
+      <div
+        *ngIf="
+          loginForm.get('email')?.invalid && loginForm.get('email')?.touched
+        "
+      >
+        <small class="text-red-500"
+          >(*) Invalid email format or required.</small
+        >
+      </div>
+      <div
+        *ngIf="
+          loginForm.get('password')?.invalid &&
+          loginForm.get('password')?.touched
+        "
+      >
+        <small class="text-red-500"
+          >(*) Invalid password format or required.</small
+        >
+      </div>
+      <div
+        *ngIf="loginForm.get('role')?.invalid && loginForm.get('role')?.touched"
+      >
+        <small class="text-red-500">(*) Role must be selected.</small>
+      </div>
+    </form>
+  </div>
+</div>

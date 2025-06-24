@@ -1,0 +1,46 @@
+<header
+  class="bg-slate-50 shadow fixed top-0 w-full z-50 h-16 flex justify-center"
+>
+  <nav class="container flex items-center justify-between px-6 py-4 gap-4">
+    <div class="flex">
+      <a href="#" class="p-1.5 w-44">
+        <img src="assets/images/logo.png" alt="" />
+      </a>
+    </div>
+    <div
+      class="hidden md:flex md:flex-row gap-x-12 flex-1 items-center justify-center"
+      >
+      <span
+        class="text-base font-normal leading-6 text-blackShade-light cursor-pointer hover:text-blackShade-strong transition-all "
+        >Course</span
+      >
+      <span
+        class="text-base font-normal leading-6 text-blackShade-light cursor-pointer hover:text-blackShade-strong transition-all"
+        >Tour</span
+      >
+      <span
+        class="text-base font-normal leading-6 text-blackShade-light cursor-pointer hover:text-blackShade-strong transition-all"
+        >Workshop</span
+      >
+      <span
+      class="text-base font-normal leading-6 text-blackShade-light cursor-pointer hover:text-blackShade-strong transition-all"
+      >Blog</span
+      >
+      <span
+      class="text-base font-normal leading-6 text-blackShade-light cursor-pointer hover:text-blackShade-strong transition-all"
+      >Q&A</span>
+    </div>
+    <div class="hidden md:flex md:flex-row items-center justify-end gap-x-4">
+      <app-standard-button
+        label="Log in"
+        styleClass="primary-light w-40"
+        (onClick)="navigateToLogIn()"
+      />
+      <app-standard-button
+        label="Sign Up"
+        styleClass="primary-outline"
+        (onClick)="navigateToSignUpForGuardian()"
+      />
+    </div>
+  </nav>
+</header>

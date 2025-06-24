@@ -1,0 +1,165 @@
+<div class="mt-16">
+  <div class="container">
+    <div class="flex flex-col md:flex-row py-16 gap-10 md:gap-20">
+      <div class="mt-32 flex-1">
+        <p class="text-primary-main font-medium text-4xl/10">
+          Choose the Right Industry Secure the Future
+        </p>
+        <p class="text-blackShade-light font-normal text-xl">
+          University is not about learning universally.
+        </p>
+        <div
+          class="flex flex-col md:flex-row items-center md:items-end justify-center md:justify-between gap-4 mt-6"
+        >
+          <app-standard-button
+            label="Start Your Application"
+            styleClass="primary"
+            (onClick)="navigateToLogin()"
+          ></app-standard-button>
+          <img
+            class="hidden md:block"
+            src="assets/images/undraw_road_to_knowledge_m8s0 1.png"
+          />
+        </div>
+      </div>
+      <img
+        src="assets/images/main-landing.png"
+        class="hidden md:block lg:max-w-[400px] max-w-[200px]"
+      />
+    </div>
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12 md:gap-6 mt-12 mb-4"
+    >
+      <ng-container *ngFor="let item of landingItems">
+        <ng-container
+          *ngTemplateOutlet="landingItemTemplate; context: { $implicit: item }"
+        ></ng-container>
+      </ng-container>
+    </div>
+    <div class="flex justify-between items-center mb-4">
+      <div class="">
+        <div class="text-xl font-medium mb-2">Top Industry</div>
+        <div class="">Explore popular industries</div>
+      </div>
+      <app-standard-button
+      label="See All Industry"
+      styleClass="primary-outline-circle"
+    />
+    </div>
+    <div class="grid sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 px-2 sm:px-4 md:px-5 py-2 mb-4">
+      <div class="border rounded-xl cursor-pointer flex flex-col items-center justify-center px-4 py-10 transition-transform duration-300 hover:-translate-y-1">
+        <img src="assets/images/img_industry.png" class="mb-2 object-contain w-6 h-6" />
+        <div class="text-base text-center">Information Technology</div>
+        <div class="text-sm text-gray-500">38 Course</div>
+      </div>
+    </div>
+    <div class="flex justify-between items-center mb-4">
+      <div class="">
+        <div class="text-xl font-medium mb-2">Top Course</div>
+        <div class="">Explore popular courses</div>
+      </div>
+      <app-standard-button
+      label="See All Course"
+      styleClass="primary-outline-circle"
+    />
+    </div>
+    <div class ="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-2 sm:px-4 md:px-5 py-2">
+      <div class = "border rounded-xl cursor-pointer flex flex-col transition-transform duration-300 hover:-translate-y-1">
+        <img src="assets/images/img_course.jpg" class="object-contain w-full rounded-t-xl" />
+        <div class="p-4">
+          <div class="text-base font-semibold">Nhập môn lập trình</div>
+          <div class="text-sm mb-2"><span class="font-medium">by </span>Đại Học Sư Phạm Kỹ Thuật</div>
+          <div class="flex gap-4 mb-2">
+            <div class="flex gap-2 items-center">
+              <i class="pi pi-clock" style="color: var(--primary-main)"></i>
+              <span class="text-sm">3 tiếng</span>
+            </div>
+            <div class="flex gap-2 items-center">
+              <i class="pi pi-graduation-cap" style="color: var(--primary-main)"></i>
+              <span class="text-sm">156 học sinh</span>
+            </div>
+          </div>
+          <p-divider />
+          <div class="flex gap-4  justify-between">
+            <div class="flex gap-1 font-normal text-sm items-center"><span>4.6</span><i class="pi pi-star-fill" style="color: #FD8E1F;"></i></div>
+            <div class="text-sm"><span class="font-light">(330)&nbsp;</span><span class="font-normal">lượt đánh giá</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="p-8 gap-4">
+      <div class="text-center font-medium text-2xl">Top Mentor of the Month</div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 px-8 mb-4">
+        <div class="border flex flex-col rounded-xl gap-2 transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+          <img src="assets/images/img_course.jpg" class="object-cover w-full h-64 rounded-t-xl" />
+          <div class="p-4"><div class="font-medium text-base text-center">Devon Lane</div>
+          <div class="font-light text-sm text-center">Senior Developer</div>
+          <p-divider />
+          <div class="flex gap-4 justify-between">
+            <div class="flex gap-1 font-normal text-sm items-center"><span>4.6</span><i class="pi pi-star-fill" style="color: #FD8E1F;"></i></div>
+            <div class="text-sm"><span class="font-light">(330)&nbsp;</span><span class="font-medium">học sinh</span></div>
+          </div></div>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <div class="text-primary-main text-sm items-center flex gap-3 group cursor-pointer hover:text-primary-dark hover:bg-primary-light transition-all duration-300 px-3 py-2 rounded-full">
+          <span>Show All</span>
+          <i class="pi pi-arrow-right transform transition-transform duration-300 group-hover:translate-x-1"></i>
+        </div>
+      </div>
+    </div>
+    <div class="p-8 gap-4">
+      <div class="text-center font-medium text-2xl">Top Company of the Month</div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 px-8 mb-4">
+        <div class="border flex flex-col rounded-xl gap-2 transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+          <img src="assets/images/img_course.jpg" class="object-cover w-full h-64 rounded-t-xl" />
+          <div class="p-4"><div class="font-medium text-base text-center">Devon Lane</div>
+          <div class="font-light text-sm text-center">Senior Developer</div>
+          <p-divider />
+          <div class="flex gap-4 justify-between">
+            <div class="flex gap-1 font-normal text-sm items-center"><span>4.6</span><i class="pi pi-star-fill" style="color: #FD8E1F;"></i></div>
+            <div class="text-sm"><span class="font-light">(330)&nbsp;</span><span class="font-medium">học sinh</span></div>
+          </div></div>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <div class="text-primary-main text-sm items-center flex gap-3 group cursor-pointer hover:text-primary-dark hover:bg-primary-light transition-all duration-300 px-3 py-2 rounded-full">
+          <span>Show All</span>
+          <i class="pi pi-arrow-right transform transition-transform duration-300 group-hover:translate-x-1"></i>
+        </div>
+      </div>
+    </div>
+    <div class="p-8 gap-4">
+      <div class="text-center font-medium text-2xl">Top University of the Month</div>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 px-8 mb-4">
+        <div class="border flex flex-col rounded-xl gap-2 transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+          <img src="assets/images/img_course.jpg" class="object-cover w-full h-64 rounded-t-xl" />
+          <div class="p-4"><div class="font-medium text-base text-center">Devon Lane</div>
+          <div class="font-light text-sm text-center">Senior Developer</div>
+          <p-divider />
+          <div class="flex gap-4 justify-between">
+            <div class="flex gap-1 font-normal text-sm items-center"><span>4.6</span><i class="pi pi-star-fill" style="color: #FD8E1F;"></i></div>
+            <div class="text-sm"><span class="font-light">(330)&nbsp;</span><span class="font-medium">học sinh</span></div>
+          </div></div>
+        </div>
+      </div>
+      <div class="flex justify-center">
+        <div class="text-primary-main text-sm items-center flex gap-3 group cursor-pointer hover:text-primary-dark hover:bg-primary-light transition-all duration-300 px-3 py-2 rounded-full">
+          <span>Show All</span>
+          <i class="pi pi-arrow-right transform transition-transform duration-300 group-hover:translate-x-1"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<ng-template #landingItemTemplate let-item>
+  <div class="p-6 bg-primary-light rounded-md flex-1">
+    <img [src]="item.image" class="-mt-16 w-20" [alt]="item.title" />
+    <p class="mt-4 text-lg text-primary-main font-medium">
+      {{ item.title }}
+    </p>
+    <span class="text-blackShade-light text-sm font-normal">
+      {{ item.description }}
+    </span>
+  </div>
+</ng-template>

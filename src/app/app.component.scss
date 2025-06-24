@@ -1,0 +1,123 @@
+// Css Toast
+:host ::ng-deep .p-toast {
+ opacity: 0.95 !important;
+}
+
+:host ::ng-deep .p-toast .p-toast-message .p-toast-message-content {
+ border-width: 0;
+ padding: 10px 2px 10px 10px;
+}
+
+:host ::ng-deep .p-toast .p-toast-message .p-toast-summary {
+ font-size: 1rem;
+}
+
+:host ::ng-deep .p-toast .p-toast-message .p-toast-detail {
+ font-size: 0.85rem;
+}
+
+:host ::ng-deep .p-toast .p-toast-message.p-toast-message-success {
+ background-color: #f0f9eb;
+ border: 0.75px solid #67c23a;
+}
+
+:host ::ng-deep .p-toast .p-toast-message.p-toast-message-info {
+ background-color: #ecf5ff;
+ border: 0.75px solid #409eff;
+}
+
+:host ::ng-deep .p-toast .p-toast-message.p-toast-message-warn {
+ background-color: #fdf6ec;
+ border: 0.75px solid #e6a23c;
+}
+
+:host ::ng-deep .p-toast .p-toast-message.p-toast-message-error {
+ background-color: #fef0f0;
+ border: 0.75px solid #f56c6c;
+}
+
+:host ::ng-deep .p-element .p-icon-wrapper {
+ width: 20px;
+ height: 20px;
+}
+
+// Css Datepicker
+:host ::ng-deep .p-datepicker {
+ font-size: 0.85rem !important; /* Giảm kích thước font */
+ width: 250px !important; /* Giảm chiều rộng tổng thể */
+}
+
+:host ::ng-deep .p-datepicker table {
+ font-size: 0.85rem !important;
+ margin: 0.25rem 0 !important;
+}
+
+:host ::ng-deep .p-datepicker table td {
+ padding: 0.1rem !important;
+ width: 2rem !important;
+ height: 2rem !important;
+}
+
+:host ::ng-deep .p-datepicker table td > span {
+ width: 1.75rem !important;
+ height: 1.75rem !important;
+ line-height: 1.75rem !important;
+}
+
+:host ::ng-deep .p-datepicker table th {
+ padding: 0.1rem !important;
+ font-size: 0.7rem !important;
+}
+
+:host ::ng-deep .p-datepicker .p-datepicker-header {
+ padding: 0.25rem !important;
+}
+
+:host ::ng-deep .p-datepicker .p-datepicker-header .p-datepicker-title {
+ margin: 0 0.25rem !important;
+}
+
+:host ::ng-deep .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year,
+:host ::ng-deep .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+ font-size: 0.8rem !important;
+ padding: 0.1rem 0.25rem !important;
+}
+
+:host ::ng-deep .p-checkbox .p-checkbox-box {
+ border-color: #d1d5db;
+}
+
+:host ::ng-deep .p-checkbox .p-checkbox-box.p-highlight {
+ background-color: #1d4ed8;
+ border-color: #1d4ed8;
+}
+
+:host ::ng-deep .p-button {
+ background-color: #1d4ed8;
+ border-color: #1d4ed8;
+}
+
+:host ::ng-deep .p-button:hover {
+ background-color: #1e40af;
+ border-color: #1e40af;
+}
+
+:host ::ng-deep .p-calendar.ng-dirty.ng-invalid > .p-calendar > .p-inputtext {
+ border-color: inherit;
+}
+
+// Css Input
+:host ::ng-deep .p-inputtext {
+ font-size: 0.9rem !important;
+ opacity: 0.7;
+ color: #000;
+ font-weight: 500;
+}
+
+:host ::ng-deep .p-inputtext.ng-dirty.ng-invalid {
+ border-color: inherit;
+}
+
+:host ::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+ font-size: 0.9rem !important;
+}

@@ -1,0 +1,150 @@
+<div class="container min-h-screen">
+ <div class="flex items-center justify-center pt-20">
+   <form
+     [formGroup]="signUpForm"
+     (submit)="onSubmit($event)"
+     class="shadow-md rounded-lg border border-gray-300 py-5 px-10 w-10/12 xl:w-5/6 flex flex-col overflow-hidden"
+   >
+     <img src="assets/images/logo.png" class="w-40 mx-auto" />
+     <p class="text-3xl text-primary-main font-medium my-5 text-center">
+       Sign Up
+     </p>
+     <h3 class="text-sm text-blackShade-light font-normal mb-10 text-center">
+       Please make sure all information is up-to-date and accurate.
+     </h3>
+     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+       <div class="grid-rows-6">
+         <div class="mb-3">
+           <app-standard-input-label> Name </app-standard-input-label>
+           <div class="grid grid-cols-3 gap-2">
+             <input
+               type="text"
+               pInputText
+               class="w-full"
+               placeholder="First Name"
+               formControlName="firstName"
+             />
+
+             <input
+               type="text"
+               pInputText
+               class="w-full"
+               placeholder="Middle Name"
+               formControlName="middleName"
+             />
+
+             <input
+               type="text"
+               pInputText
+               class="w-full"
+               placeholder="Last Name"
+               formControlName="lastName"
+             />
+           </div>
+         </div>
+         <div class="mb-3">
+          <app-standard-input-label> Gender </app-standard-input-label>
+          <p-dropdown
+            optionLabel="name"
+            [options]="genderTypes"
+            placeholder="Gender"
+            styleClass="w-full"
+            formControlName="gender"
+          />
+        </div>
+        <div class="mb-3">
+         <app-standard-input-label> Date Of Birth </app-standard-input-label>
+         <p-calendar
+           placeholder="BirthDate"
+           styleClass="w-full"
+           formControlName="dateOfBirth"
+         />
+       </div>
+         
+       </div>
+
+       <div class="grid-rows-6">
+        <div class="mb-3">
+         <app-standard-input-label> Email </app-standard-input-label>
+         <input
+           type="email"
+           pInputText
+           class="w-full"
+           placeholder="Email"
+           formControlName="email"
+         />
+       </div>
+        <div class="mb-3">
+         <app-standard-input-label> Phone Number </app-standard-input-label>
+         <input
+           type="text"
+           pInputText
+           class="w-full"
+           placeholder="Phone Number"
+           formControlName="phoneNumber"
+         />
+       </div>
+       <div class="mb-3">
+         <app-standard-input-label> Password </app-standard-input-label>
+         <input
+           type="password"
+           pInputText
+           class="w-full"
+           placeholder="Password"
+           formControlName="password"
+         />
+       </div>
+       <div class="mb-3">
+         <app-standard-input-label>
+           Confirm Password
+         </app-standard-input-label>
+         <input
+           type="password"
+           pInputText
+           class="w-full"
+           placeholder="Confirm Password"
+           formControlName="confirmPassword"
+         />
+       </div>
+       </div>
+     </div>
+
+     <div
+       class="text-sm font-medium mt-4 justify-center items-start gap-2 grid grid-rows"
+     >
+       <div class="flex items-start justify-center gap-2">
+         <input type="checkbox" formControlName="agreeTerms" />
+         <div class="w-3/4 -mt-1">
+           I hereby certify that the information provided above is true and
+           correct in all details.
+         </div>
+       </div>
+
+       <app-standard-button
+         label="Sign Up"
+         styleClass="primary w-full"
+         class="mt-2"
+         type="submit"
+       ></app-standard-button>
+     </div>
+
+     <span class="text-sm text-blackShade-light font-normal mt-4 text-center"
+       >Already have an account ?
+       <span
+         class="text-primary-main cursor-pointer font-medium"
+         (click)="navigateToLogin()"
+         >Log in</span
+       ></span
+     >
+     <app-standard-form-error [control]="signUpForm.get('email')" fieldName="Email"></app-standard-form-error>
+     <app-standard-form-error [control]="signUpForm.get('firstName')" fieldName="First Name"></app-standard-form-error>
+     <app-standard-form-error [control]="signUpForm.get('middleName')" fieldName="Middle Name"></app-standard-form-error>
+     <app-standard-form-error [control]="signUpForm.get('lastName')" fieldName="Last Name"></app-standard-form-error>
+     <app-standard-form-error [control]="signUpForm.get('password')" fieldName="Password"></app-standard-form-error>
+     <app-standard-form-error [control]="signUpForm.get('confirmPassword')" fieldName="Confirm Password"></app-standard-form-error>
+     <app-standard-form-error [control]="signUpForm.get('dateOfBirth')" fieldName="Date Of Birth"></app-standard-form-error>
+     <app-standard-form-error [control]="signUpForm.get('gender')" fieldName="Gender"></app-standard-form-error>
+     <app-standard-form-error [control]="signUpForm.get('phoneNumber')" fieldName="Phone Number"></app-standard-form-error>
+   </form>
+ </div>
+</div>
