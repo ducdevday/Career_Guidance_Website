@@ -14,6 +14,9 @@ import { FORGOT_PASSWORD_ROUTE, SIGN_UP_ROUTE } from '../guest.routes';
 import { CommonModule } from '@angular/common';
 import { Store } from '@ngrx/store';
 import { StandardInputLabelComponent } from '../../../shared/components/standard-input-label/standard-input-label.component';
+import { loginAction } from '../../../stores/login/login.action';
+import { AppState } from '../../../stores/app.state';
+import { LoginRequest } from '../../../dtos/request/login-request';
 
 @Component({
   selector: 'app-login',
@@ -34,17 +37,22 @@ export class LoginComponent {
   constructor(
     private fb: FormBuilder,
     private router: Router,
+    private store: Store<AppState>
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
-      role: [null, Validators.required],
     });
   }
 
   onSubmit(event: Event): void {
     if (this.loginForm.valid) {
-      
+      var request : LoginRequest =  {
+        ...this.loginForm.value
+      }
+      this.store.dispatch(
+        loginAction({request})
+      );
     } else {
      
     }

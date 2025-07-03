@@ -1,0 +1,46 @@
+<div class="container min-h-screen">
+  <div class="flex items-center justify-center pt-20">
+    <form
+      [formGroup]="verifyEmailRegistrationForm"
+      (submit)="onSubmit($event)"
+      class="shadow-md rounded-lg border border-gray-300 py-5 px-10 w-10/12 xl:w-1/2 flex flex-col overflow-hidden"
+    >
+      <img src="assets/images/logo.png" class="w-40 mx-auto" />
+      <p class="text-3xl text-primary-main font-medium my-5 text-center">
+        Verify Email Registration
+      </p>
+      <h3 class="text-sm text-blackShade-light font-normal mb-10 text-center">
+        Enter the verification code that the system sent to your email to
+        complete the login process.
+      </h3>
+      <div class="flex flex-col gap-2">
+        <div>
+          <app-standard-input-label> Email </app-standard-input-label>
+          <input
+            type="email"
+            pInputText
+            formControlName="email"
+            class="w-full"
+          />
+        </div>
+        <div>
+          <app-standard-input-label>
+            Verification Code
+          </app-standard-input-label>
+          <input type="text" pInputText formControlName="code" class="w-full" />
+        </div>
+
+        <app-standard-button
+          label="Submit"
+          styleClass="primary w-full"
+          class="mt-2"
+          type="submit"
+        ></app-standard-button>
+      </div>
+
+      <app-standard-form-error [control]="verifyEmailRegistrationForm.get('email')" fieldName="Email"></app-standard-form-error>
+      <app-standard-form-error [control]="verifyEmailRegistrationForm.get('code')" fieldName="Code"></app-standard-form-error>
+
+    </form>
+  </div>
+</div>

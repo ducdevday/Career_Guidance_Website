@@ -1,5 +1,10 @@
 import { Injectable } from '@angular/core';
 
+
+export const USER_KEY = "user-info";
+export const ACCESS_TOKEN_KEY = "accessToken";
+
+
 @Injectable({
   providedIn: 'root',
 })

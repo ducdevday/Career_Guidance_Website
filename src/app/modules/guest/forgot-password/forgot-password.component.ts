@@ -16,6 +16,11 @@ import { Observable } from 'rxjs';
 import { StandardInputLabelComponent } from '../../../shared/components/standard-input-label/standard-input-label.component';
 import { ValidationConstant } from '../../../shared/constant/validation-constant';
 import { StandardFormErrorComponent } from "../../../shared/components/standard-form-error/standard-form-error";
+import { AppState } from '../../../stores/app.state';
+import { confirmSetNewPasswordAction, requestSetNewPasswordAction } from '../../../stores/forgotPassword/forgot-password.action';
+import { ForgotPasswordRequest } from '../../../dtos/request/forgot-password-request';
+import { SetNewPasswordRequest } from '../../../dtos/request/set-new-password-request';
+import { selectForgotPasswordStep } from '../../../stores/forgotPassword/forgot-password.selector';
 @Component({
   selector: 'app-forgot-password',
   standalone: true,
@@ -45,12 +50,16 @@ export class ForgotPasswordComponent implements OnInit {
     },
   ];
   currentPhases = 0;
+  step$: Observable<number> = this.store.select(selectForgotPasswordStep);
   ngOnInit(): void {
-
+    this.step$.subscribe((value) => {
+      this.currentPhases = value;
+    });
   }
   constructor(
     private fb: FormBuilder,
     private toastService: ToastService,
+    private store: Store<AppState>
   ) {
     this.forgotPasswordPhase1Form = this.fb.group({
       email: ['', [Validators.required]],
@@ -85,11 +94,19 @@ export class ForgotPasswordComponent implements OnInit {
 
   onSubmitPhase1(event: Event) {
     if (this.forgotPasswordPhase1Form.valid) {
-      
+      var request : ForgotPasswordRequest = {
+        ...this.forgotPasswordPhase1Form.value 
+      }
+      this.store.dispatch(
+        requestSetNewPasswordAction({
+          request
+        })
+      );
     } else {
       this.toastService.showError('Error', 'Invalid Form Data');
     }
   }
+
   onSubmitPhase2(event: Event) {
     var password = this.forgotPasswordPhase2Form.get('password')?.value;
     var confirmPassword =
@@ -101,7 +118,13 @@ export class ForgotPasswordComponent implements OnInit {
       );
     }
     if (this.forgotPasswordPhase2Form.valid) {
-      
+      var request : SetNewPasswordRequest = {
+        ...this.forgotPasswordPhase1Form.value,
+        ...this.forgotPasswordPhase2Form.value
+      }
+      this.store.dispatch(
+        confirmSetNewPasswordAction({request})
+      );
     } else {
       this.toastService.showError('Error', 'Invalid Form Data');
     }

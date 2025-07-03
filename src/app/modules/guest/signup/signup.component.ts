@@ -13,6 +13,11 @@ import { StandardButtonComponent } from "../../../shared/components/standard-but
 import { InputTextModule } from 'primeng/inputtext';
 import { CalendarModule } from 'primeng/calendar';
 import { StandardFormErrorComponent } from '../../../shared/components/standard-form-error/standard-form-error';
+import { Store } from '@ngrx/store';
+import { AppState } from '../../../stores/app.state';
+import { signupAction } from '../../../stores/signup/signup.action';
+import { DateUtil } from '../../../shared/helpers/date-util';
+import { SignUpRequest } from '../../../dtos/request/signup-request';
 
 @Component({
   selector: 'app-signup',
@@ -37,6 +42,7 @@ export class SignupComponent {
     private fb: FormBuilder,
     private toastService: ToastService,
     private router: Router,
+    private store: Store<AppState>
   ) {
     this.signUpForm = this.fb.group({
       email: [
@@ -93,7 +99,13 @@ export class SignupComponent {
 
   onSubmit(event: Event) {
     if (this.signUpForm.valid) {
+      const request: SignUpRequest = {
+        ...this.signUpForm.value,
+        dateOfBirth: DateUtil.convertToUtcString(this.signUpForm.get('dateOfBirth')?.value),
+        gender: this.signUpForm.get('gender')?.value.value,
+      };
       
+      this.store.dispatch(signupAction({ request }));
     } else {
       this.toastService.showError('Error', 'Invalid form data');
     }
