@@ -1,1 +1,51 @@
-<p>all-school works!</p>
+<div class="min-h-screen">
+ <app-standard-breadcrumb [currentRoute]="title" />
+ <div class="flex flex-col px-6 container mt-6">
+   <!-- Header -->
+   <div class="flex flex-wrap justify-between items-center gap-4">
+     <div class="w-2/4">
+       <p-inputGroup>
+         <p-inputGroupAddon>
+           <i class="pi pi-search"></i>
+         </p-inputGroupAddon>
+         <input type="text" pInputText placeholder="UI/UX Design" />
+       </p-inputGroup>
+     </div>
+     <p-dropdown [options]="sortOptions" placeholder="Sort by"></p-dropdown>
+   </div>
+   <p-divider></p-divider>
+   <div class="flex gap-6">
+     <!-- Sidebar -->
+     <div class="flex flex-col w-[250px] gap-4">
+       <app-standard-filter
+       title="Industry"
+       [options]="['IT', 'Finance', 'Marketing']"
+     ></app-standard-filter>
+   
+     <app-standard-filter
+       title="Rating"
+       [options]="['5 star', '4 star & up', '3 star & up', '2 star & up', '1 star & up']"
+       [showStarIcon]="true"
+     ></app-standard-filter>
+     </div>
+
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
+      <div class="border flex flex-col rounded-xl gap-2 transition-transform duration-300 hover:-translate-y-1 cursor-pointer h-fit">
+       <img src="assets/images/img_course.jpg" class="object-cover w-full h-64 rounded-t-xl" />
+       <div class="p-4"><div class="font-medium text-base text-center">Devon Lane</div>
+       <div class="font-light text-sm text-center">Senior Developer</div>
+       <p-divider />
+       <div class="flex gap-4 justify-between">
+         <div class="flex gap-1 font-normal text-sm items-center"><span>4.6</span><i class="pi pi-star-fill" style="color: #FD8E1F;"></i></div>
+         <div class="text-sm"><span class="font-light">(330)&nbsp;</span><span class="font-medium">học sinh</span></div>
+       </div></div>
+     </div>
+     </div>
+   </div>
+
+   <!-- Pagination -->
+   <div class="flex justify-center">
+     <p-paginator/>
+   </div>
+ </div>
+</div>

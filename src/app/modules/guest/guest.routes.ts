@@ -38,6 +38,10 @@ export default [
       {
         path: ALL_MENTOR_ROUTE,
         component: AllMentorComponent
+      },
+      {
+        path: ALL_SCHOOL_ROUTE,
+        component: AllSchoolComponent
       }
     ],
   },
