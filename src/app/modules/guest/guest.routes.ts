@@ -7,6 +7,8 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { VerifyEmailRegistrationComponent } from './verify-email-registration/verify-email-registration.component';
 import { AllCourseComponent } from './all-course/all-course.component';
 import { AllCompanyComponent } from './all-company/all-company.component';
+import { AllMentorComponent } from './all-mentor/all-mentor.component';
+import { AllSchoolComponent } from './all-school/all-school.component';
 export const HOME_ROUTE = '';
 export const LOGIN_ROUTE = 'login';
 export const FORGOT_PASSWORD_ROUTE = 'forgot-password';
@@ -14,6 +16,8 @@ export const SIGN_UP_ROUTE = 'sign-up';
 export const VERIFY_EMAIL_REGISTRATION_ROUTE = 'verify-email-registration';
 export const ALL_COURSE_ROUTE = 'all-course';
 export const ALL_COMPANY_ROUTE = 'all-company';
+export const ALL_MENTOR_ROUTE = 'all-mentor';
+export const ALL_SCHOOL_ROUTE = 'all-school';
 export default [
   {
     path: '',
@@ -30,6 +34,10 @@ export default [
       {
         path: ALL_COMPANY_ROUTE,
         component: AllCompanyComponent
+      },
+      {
+        path: ALL_MENTOR_ROUTE,
+        component: AllMentorComponent
       }
     ],
   },
