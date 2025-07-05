@@ -1,0 +1,25 @@
+<div class="border p-4">
+ <div class="flex justify-between items-center cursor-pointer" (click)="toggleExpand()">
+   <span>{{ title }}</span>
+   <i class="pi" [ngClass]="isExpanded ? 'pi-angle-up' : iconClass"></i>
+ </div>
+ <p-divider></p-divider>
+
+ <div
+   [ngClass]="{
+     'max-h-0 overflow-hidden': !isExpanded,
+     'max-h-96': isExpanded
+   }"
+   class="flex flex-col gap-4 transition-all duration-300 ease-in-out"
+ >
+   <ng-container *ngFor="let option of options">
+     <div class="flex justify-between">
+       <div class="flex gap-1">
+         <i *ngIf="showStarIcon" class="pi pi-star-fill text-secondary-light"></i>
+         <span>{{ option }}</span>
+       </div>
+       <input type="checkbox" />
+     </div>
+   </ng-container>
+ </div>
+</div>
