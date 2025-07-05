@@ -1,0 +1,156 @@
+<div class="min-h-screen">
+  <app-standard-breadcrumb [currentRoute]="title" />
+  <div class="flex flex-col px-6 container mt-6">
+    <!-- Header -->
+    <div class="flex flex-wrap justify-between items-center gap-4">
+      <div class="w-2/4">
+        <p-inputGroup>
+          <p-inputGroupAddon>
+            <i class="pi pi-search"></i>
+          </p-inputGroupAddon>
+          <input type="text" pInputText placeholder="UI/UX Design" />
+        </p-inputGroup>
+      </div>
+      <p-dropdown [options]="sortOptions" placeholder="Sort by"></p-dropdown>
+    </div>
+    <p-divider></p-divider>
+    <div class="flex gap-6">
+      <!-- Sidebar -->
+      <div class="flex flex-col w-[250px] gap-4">
+        <div class="border p-4">
+          <div
+            class="flex justify-between items-center cursor-pointer"
+            (click)="isExpandIndustry = !isExpandIndustry"
+          >
+            <span>Industry</span>
+            <i
+              class="pi"
+              [ngClass]="isExpandIndustry ? 'pi-angle-up' : 'pi-angle-down'"
+            ></i>
+          </div>
+          <p-divider></p-divider>
+
+          <div
+            [ngClass]="{
+              'max-h-0 overflow-hidden': !isExpandIndustry,
+              'max-h-40': isExpandIndustry
+            }"
+            class="transition-all duration-300 ease-in-out"
+          >
+            <div class="flex justify-between pt-2">
+              <span>IT</span>
+              <input type="checkbox" />
+            </div>
+            <div class="flex justify-between pt-2">
+              <span>Finance</span>
+              <input type="checkbox" />
+            </div>
+            <div class="flex justify-between pt-2">
+              <span>Marketing</span>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+
+        <div class="border p-4">
+          <div class="flex justify-between items-center cursor-pointer" (click)="isExpandRating = !isExpandRating">
+            <span>Rating</span>
+            <i class="pi" [ngClass]="isExpandRating ? 'pi-angle-up' : 'pi-angle-down'"></i>
+          </div>
+          <p-divider></p-divider>
+        
+          <div
+            [ngClass]="{
+              'max-h-0 overflow-hidden': !isExpandRating,
+              'max-h-96': isExpandRating
+            }"
+            class="flex flex-col gap-4 transition-all duration-300 ease-in-out"
+          >
+            <ng-container *ngFor="let rate of ratingOptions">
+              <div class="flex justify-between">
+                <div class="flex gap-1">
+                  <i class="pi pi-star-fill text-secondary-light"></i>
+                  <span>{{ rate }}</span>
+                </div>
+                <input type="checkbox" />
+              </div>
+            </ng-container>
+          </div>
+        </div>
+        
+        <div class="border p-4">
+          <div class="flex justify-between items-center cursor-pointer" (click)="isExpandDuration = !isExpandDuration">
+            <span>Duration</span>
+            <i class="pi" [ngClass]="isExpandDuration ? 'pi-angle-up' : 'pi-angle-down'"></i>
+          </div>
+          <p-divider></p-divider>
+        
+          <div
+            [ngClass]="{
+              'max-h-0 overflow-hidden': !isExpandDuration,
+              'max-h-32': isExpandDuration
+            }"
+            class="flex flex-col gap-4 transition-all duration-300 ease-in-out"
+          >
+            <div class="flex justify-between">
+              <span>1 - 3 Hours</span>
+              <input type="checkbox" />
+            </div>
+            <div class="flex justify-between">
+              <span>1 - 4 Weeks</span>
+              <input type="checkbox" />
+            </div>
+          </div>
+        </div>
+        
+      </div>
+
+      <!-- Course Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
+        <div
+          class="border rounded-xl cursor-pointer flex flex-col transition-transform duration-300 hover:-translate-y-1 h-fit"
+        >
+          <img
+            src="assets/images/img_course.jpg"
+            class="object-contain w-full rounded-t-xl"
+          />
+          <div class="p-4">
+            <div class="text-base font-semibold">Nhập môn lập trình</div>
+            <div class="text-sm mb-2">
+              <span class="font-medium">by </span>Đại Học Sư Phạm Kỹ Thuật
+            </div>
+            <div class="flex gap-4 mb-2">
+              <div class="flex gap-2 items-center">
+                <i class="pi pi-clock" style="color: var(--primary-main)"></i>
+                <span class="text-sm">3 tiếng</span>
+              </div>
+              <div class="flex gap-2 items-center">
+                <i
+                  class="pi pi-graduation-cap"
+                  style="color: var(--primary-main)"
+                ></i>
+                <span class="text-sm">156 học sinh</span>
+              </div>
+            </div>
+            <p-divider />
+            <div class="flex gap-4 justify-between">
+              <div class="flex gap-1 font-normal text-sm items-center">
+                <span>4.6</span
+                ><i class="pi pi-star-fill" style="color: #fd8e1f"></i>
+              </div>
+              <div class="text-sm">
+                <span class="font-light">(330)&nbsp;</span
+                ><span class="font-normal">lượt đánh giá</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-center">
+      <p-paginator/>
+    </div>
+  </div>
+</div>
