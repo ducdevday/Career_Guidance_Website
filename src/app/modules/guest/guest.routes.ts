@@ -6,12 +6,14 @@ import { SignupComponent } from './signup/signup.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailRegistrationComponent } from './verify-email-registration/verify-email-registration.component';
 import { AllCourseComponent } from './all-course/all-course.component';
+import { AllCompanyComponent } from './all-company/all-company.component';
 export const HOME_ROUTE = '';
 export const LOGIN_ROUTE = 'login';
 export const FORGOT_PASSWORD_ROUTE = 'forgot-password';
 export const SIGN_UP_ROUTE = 'sign-up';
 export const VERIFY_EMAIL_REGISTRATION_ROUTE = 'verify-email-registration';
-export const All_COURSE_ROUTE = 'all-course';
+export const ALL_COURSE_ROUTE = 'all-course';
+export const ALL_COMPANY_ROUTE = 'all-company';
 export default [
   {
     path: '',
@@ -22,8 +24,12 @@ export default [
         component: HomeComponent,
       },
       {
-        path: All_COURSE_ROUTE,
+        path: ALL_COURSE_ROUTE,
         component: AllCourseComponent
+      },
+      {
+        path: ALL_COMPANY_ROUTE,
+        component: AllCompanyComponent
       }
     ],
   },
