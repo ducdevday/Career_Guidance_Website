@@ -10,6 +10,7 @@ import { AllCompanyComponent } from './all-company/all-company.component';
 import { AllMentorComponent } from './all-mentor/all-mentor.component';
 import { AllSchoolComponent } from './all-school/all-school.component';
 import { AllBlogComponent } from './all-blog/all-blog.component';
+import { AllWorkshopComponent } from './all-workshop/all-workshop.component';
 export const HOME_ROUTE = '';
 export const LOGIN_ROUTE = 'login';
 export const FORGOT_PASSWORD_ROUTE = 'forgot-password';
@@ -20,6 +21,8 @@ export const ALL_COMPANY_ROUTE = 'all-company';
 export const ALL_MENTOR_ROUTE = 'all-mentor';
 export const ALL_SCHOOL_ROUTE = 'all-school';
 export const ALL_BLOG_ROUTE = 'all-blog';
+export const ALL_WORKSHOP_ROUTE = 'all-workshop';
+
 export default [
   {
     path: '',
@@ -48,6 +51,10 @@ export default [
       {
         path: ALL_BLOG_ROUTE,
         component: AllBlogComponent
+      },
+      {
+        path: ALL_WORKSHOP_ROUTE,
+        component: AllWorkshopComponent
       }
     ],
   },
