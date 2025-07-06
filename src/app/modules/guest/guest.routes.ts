@@ -11,6 +11,7 @@ import { AllMentorComponent } from './all-mentor/all-mentor.component';
 import { AllSchoolComponent } from './all-school/all-school.component';
 import { AllBlogComponent } from './all-blog/all-blog.component';
 import { AllWorkshopComponent } from './all-workshop/all-workshop.component';
+import { AllTourComponent } from './all-tour/all-tour.component';
 export const HOME_ROUTE = '';
 export const LOGIN_ROUTE = 'login';
 export const FORGOT_PASSWORD_ROUTE = 'forgot-password';
@@ -22,6 +23,7 @@ export const ALL_MENTOR_ROUTE = 'all-mentor';
 export const ALL_SCHOOL_ROUTE = 'all-school';
 export const ALL_BLOG_ROUTE = 'all-blog';
 export const ALL_WORKSHOP_ROUTE = 'all-workshop';
+export const ALL_TOUR_ROUTE = 'all-tour';
 
 export default [
   {
@@ -55,6 +57,10 @@ export default [
       {
         path: ALL_WORKSHOP_ROUTE,
         component: AllWorkshopComponent
+      },
+      {
+        path: ALL_TOUR_ROUTE,
+        component: AllTourComponent
       }
     ],
   },
