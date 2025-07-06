@@ -1,0 +1,84 @@
+<div class="min-h-screen">
+  <app-standard-breadcrumb [currentRoute]="title" />
+  <div class="flex flex-col px-6 container mt-6">
+    <!-- Header -->
+    <div class="flex flex-wrap justify-between items-center gap-4">
+      <div class="w-2/4">
+        <p-inputGroup>
+          <p-inputGroupAddon>
+            <i class="pi pi-search"></i>
+          </p-inputGroupAddon>
+          <input type="text" pInputText placeholder="UI/UX Design" />
+        </p-inputGroup>
+      </div>
+      <p-dropdown [options]="sortOptions" placeholder="Sort by"></p-dropdown>
+    </div>
+    <p-divider></p-divider>
+    <div class="flex gap-6">
+      <!-- Sidebar -->
+      <div class="flex flex-col w-[250px] gap-4">
+        <app-standard-filter
+          title="Industry"
+          [options]="['IT', 'Finance', 'Marketing']"
+        ></app-standard-filter>
+      </div>
+
+      <div class="flex flex-col gap-6 flex-1">
+        <div class="border rounded-xl cursor-pointer flex h-fit p-2 justify-between transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-[1.01] hover:bg-gray-50">
+          <div class="flex">
+            <img
+              src="assets/images/img_course.jpg"
+              class="w-8 h-8 rounded-full object-cover object-center"
+            />
+            <div class="ml-4 flex flex-col justify-between">
+              <div>
+               <div class="text-base font-semibold">Nhập môn lập trình</div>
+               <div class="text-sm mb-2 ">
+                 <span class="font-medium">by </span>Đại Học Sư Phạm Kỹ Thuật
+               </div>
+              </div>
+              <div class="flex gap-4 ">
+                <div class="flex gap-2 items-center">
+                  <i
+                    class="pi pi-calendar-clock"
+                    style="color: var(--primary-main)"
+                  ></i>
+                  <span class="text-sm">11/12/2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="flex flex-col justify-between">
+            <div class="text-base font-normal">Updated in: 11/12/2025</div>
+
+            <div class="flex gap-4">
+              <div class="flex gap-1 items-center">
+                <i class="pi pi-eye" style="color: var(--primary-main)"></i>
+                <span class="text-sm">125</span>
+              </div>
+              <div class="flex gap-1 items-center">
+                <i
+                  class="pi pi-comments"
+                  style="color: var(--primary-main)"
+                ></i>
+                <span class="text-sm">125</span>
+              </div>
+              <div class="flex gap-1 items-center">
+                <i
+                  class="pi pi-arrow-up-right"
+                  style="color: var(--primary-main)"
+                ></i>
+                <span class="text-sm">125</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="flex justify-center">
+      <p-paginator />
+    </div>
+  </div>
+</div>
