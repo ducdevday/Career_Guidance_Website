@@ -1,0 +1,57 @@
+<div class="min-h-screen">
+ <app-standard-breadcrumb [currentRoute]="title" />
+ <div class="flex flex-col px-6 container mt-6">
+   <!-- Header -->
+   <div class="flex flex-wrap justify-between items-center gap-4">
+     <div class="w-2/4">
+       <p-inputGroup>
+         <p-inputGroupAddon>
+           <i class="pi pi-search"></i>
+         </p-inputGroupAddon>
+         <input type="text" pInputText placeholder="UI/UX Design" />
+       </p-inputGroup>
+     </div>
+     <p-dropdown [options]="sortOptions" placeholder="Sort by"></p-dropdown>
+   </div>
+   <p-divider></p-divider>
+   <div class="flex gap-6">
+     <!-- Sidebar -->
+     <div class="flex flex-col w-[250px] gap-4">
+       <app-standard-filter
+       title="Industry"
+       [options]="['IT', 'Finance', 'Marketing']"
+     ></app-standard-filter>
+   
+     
+     </div>
+
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
+      <div
+        class="border rounded-xl cursor-pointer flex flex-col transition-transform duration-300 hover:-translate-y-1 h-fit"
+      >
+        <img
+          src="assets/images/img_course.jpg"
+          class="object-contain w-full rounded-t-xl"
+        />
+        <div class="p-4">
+          <div class="text-base font-semibold">Nhập môn lập trình</div>
+          <div class="text-sm mb-2">
+            <span class="font-medium">by </span>Đại Học Sư Phạm Kỹ Thuật
+          </div>
+          <div class="flex gap-4 mb-2">
+            <div class="flex gap-2 items-center">
+              <i class="pi pi-clock" style="color: var(--primary-main)"></i>
+              <span class="text-sm">3 tiếng</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+
+   <!-- Pagination -->
+   <div class="flex justify-center">
+     <p-paginator/>
+   </div>
+ </div>
+</div>
