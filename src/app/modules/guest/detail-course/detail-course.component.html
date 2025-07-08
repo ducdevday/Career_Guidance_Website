@@ -1,0 +1,128 @@
+<div class="min-h-screen">
+  <app-standard-breadcrumb [currentRoute]="title" />
+  <div class="px-6 container mt-6">
+    <div class="flex gap-6">
+      <div class="flex flex-col flex-1">
+        <div class="text-blackShade-strong text-2xl font-semibold mb-4">
+          Complete Website Responsive Design: from Figma to Webflow to Website
+          Design
+        </div>
+        <div class="flex justify-end">
+          <div class="flex text-sm">
+            <i class="pi pi-star-fill" style="color: #fd8e1f"></i>
+            <i class="pi pi-star-fill" style="color: #fd8e1f"></i>
+            <i class="pi pi-star-fill" style="color: #fd8e1f"></i>
+            <i class="pi pi-star-fill" style="color: #fd8e1f"></i>
+            <i class="pi pi-star-fill" style="color: #fd8e1f"></i>
+            <span class="mx-1">4.8</span>
+            <span class="text-blackShade-light">(451,444 Rating)</span>
+          </div>
+        </div>
+        <div class="flex justify-center mt-4">
+          <video controls class="w-full rounded-2xl">
+            <source src="assets/videos/sample.mp4" type="video/mp4" />
+            Trình duyệt của bạn không hỗ trợ video.
+          </video>
+        </div>
+        <p-tabView [(activeIndex)]="activeIndex">
+          <p-tabPanel header="Overview">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+          </p-tabPanel>
+          <p-tabPanel header="Curriculum">
+
+            <div class="flex justify-between items-center mb-4">
+              <div class="text-xl text-blackShade-main font-semibold">
+                Curriculum
+              </div>
+              <div class="flex gap-3">
+                <div class="flex gap-1">
+                  <i class="pi pi-folder text-[#FF6636]"></i>
+                  <span>6 Sections</span>
+                </div>
+                <div class="flex gap-1">
+                  <i class="pi pi-play-circle text-[#564FFD]"></i>
+                  <span>202 lectures</span>
+                </div>
+                <div class="flex gap-1">
+                  <i class="pi pi-clock text-[#FD8E1F]"></i>
+                  <span>19h 37m</span>
+                </div>
+              </div>
+            </div>
+            <div class="border rounded-xl">
+            
+            <app-detail-course-lesson
+              *ngFor="let section of sections; let last = last"
+              [section]="section"
+              [hideDivider]="last"
+            ></app-detail-course-lesson></div>
+          </p-tabPanel>
+          <p-tabPanel header="Instructor">
+            <app-detail-course-instructor></app-detail-course-instructor>
+          </p-tabPanel>
+          <p-tabPanel header="Review">
+            <app-detail-course-review></app-detail-course-review>
+          </p-tabPanel>
+        </p-tabView>
+      </div>
+
+      <div class="flex flex-col w-[350px] rounded-md border p-4 h-fit">
+        <div class="flex flex-col gap-6">
+          <div class="flex justify-between">
+            <div class="flex gap-2 items-center">
+              <i class="pi pi-clock" style="color: var(--primary-main)"></i>
+              <span class="text-sm">Course Duration</span>
+            </div>
+            <div>6 Month</div>
+          </div>
+          <div class="flex justify-between">
+            <div class="flex gap-2 items-center">
+              <i class="pi pi-users" style="color: var(--primary-main)"></i>
+              <span class="text-sm">Students Enrolled</span>
+            </div>
+            <div>69,419,618</div>
+          </div>
+          <div class="flex justify-between">
+            <div class="flex gap-2 items-center">
+              <i
+                class="pi pi-calendar-clock"
+                style="color: var(--primary-main)"
+              ></i>
+              <span class="text-sm">Update In</span>
+            </div>
+            <div>18/05/2025</div>
+          </div>
+          <div class="flex justify-between">
+            <div class="flex gap-2 items-center">
+              <i class="pi pi-briefcase" style="color: var(--primary-main)"></i>
+              <span class="text-sm">Industry</span>
+            </div>
+            <div>IT</div>
+          </div>
+        </div>
+        <p-divider></p-divider>
+        <app-standard-button
+          label="Subscribe Now"
+          styleClass="primary w-full"
+          class="mt-2"
+        ></app-standard-button>
+        <p-divider></p-divider>
+        <div>Share this:</div>
+        <div
+          class="mt-2 flex py-2 px-4 gap-2 bg-slate-100 w-fit rounded-xl cursor-pointer"
+        >
+          <i class="pi pi-clone" style="font-size: 1rem"></i>
+          <span>Copy</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

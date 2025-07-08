@@ -1,0 +1,35 @@
+<div class="p-4 flex flex-col gap-4">
+  <div class="flex justify-between">
+    <div class="flex gap-4 items-center cursor-pointer" (click)="toggle()">
+      <i
+        class="pi"
+        [ngClass]="isExpanded ? 'pi-angle-up' : 'pi-angle-down'"
+      ></i>
+      <div class="text-lg text-blackShade-main font-medium">
+        {{ section.title }}
+      </div>
+    </div>
+    <div class="flex gap-4">
+      <div class="flex gap-1">
+        <i class="pi pi-play-circle text-[#564FFD]"></i>
+        <span>{{ section.lectureCount }} lectures</span>
+      </div>
+      <div class="flex gap-1">
+        <i class="pi pi-clock text-[#FD8E1F]"></i>
+        <span>{{ section.duration }}</span>
+      </div>
+    </div>
+  </div>
+
+  <ng-container *ngIf="isExpanded">
+    <div *ngFor="let lesson of section.lessons" class="flex justify-between">
+      <div class="flex gap-4 text-blackShade-main">
+        <i class="pi pi-desktop"></i>
+        <div>{{ lesson.title }}</div>
+      </div>
+      <div>{{ lesson.duration }}</div>
+    </div>
+  </ng-container>
+</div>
+
+<div *ngIf="!hideDivider" class="w-full h-[0.25px] bg-slate-200"></div>
