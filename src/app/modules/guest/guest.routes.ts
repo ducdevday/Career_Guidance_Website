@@ -14,6 +14,7 @@ import { AllWorkshopComponent } from './all-workshop/all-workshop.component';
 import { AllTourComponent } from './all-tour/all-tour.component';
 import { QAndAComponent } from './q-and-a/q-and-a.component';
 import { DetailCourseComponent } from './detail-course/detail-course.component';
+import { DetailWorkshopComponent } from './detail-workshop/detail-workshop.component';
 export const HOME_ROUTE = '';
 export const LOGIN_ROUTE = 'login';
 export const FORGOT_PASSWORD_ROUTE = 'forgot-password';
@@ -28,7 +29,7 @@ export const ALL_WORKSHOP_ROUTE = 'all-workshop';
 export const ALL_TOUR_ROUTE = 'all-tour';
 export const QNA_ROUTE = 'q-and-a';
 export const DETAIL_COURSE_ROUTE = 'detail-course';
-
+export const DETAIL_WORKSHOP_ROUTE = 'detail-workshop';
 export default [
   {
     path: '',
@@ -73,6 +74,10 @@ export default [
       {
         path: DETAIL_COURSE_ROUTE,
         component: DetailCourseComponent
+      },
+      {
+        path: DETAIL_WORKSHOP_ROUTE,
+        component: DetailWorkshopComponent
       }
     ],
   },
