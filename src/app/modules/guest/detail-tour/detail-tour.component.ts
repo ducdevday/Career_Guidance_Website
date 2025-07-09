@@ -4,15 +4,16 @@ import { DividerModule } from 'primeng/divider';
 import { StandardButtonComponent } from "../../../shared/components/standard-button/standard-button.component";
 import { TabViewModule } from 'primeng/tabview';
 import { CommonModule } from '@angular/common';
-import { DetailWorkshopOwnerComponent } from "./detail-workshop-owner/detail-workshop-owner.component";
+import { DetailTourOwnerComponent } from "./detail-tour-owner/detail-tour-owner.component";
 @Component({
-  selector: 'app-detail-workshop',
+  selector: 'app-detail-tour',
   standalone: true,
-  imports: [StandardBreadcrumbComponent, DividerModule, StandardButtonComponent, TabViewModule, CommonModule, DetailWorkshopOwnerComponent],
-  templateUrl: './detail-workshop.component.html',
-  styleUrl: './detail-workshop.component.scss'
+  imports: [StandardBreadcrumbComponent, DividerModule, StandardButtonComponent, TabViewModule, CommonModule, DetailTourOwnerComponent],
+
+  templateUrl: './detail-tour.component.html',
+  styleUrl: './detail-tour.component.scss'
 })
-export class DetailWorkshopComponent {
-  title: string = 'Detail Workshop'
+export class DetailTourComponent {
+  title: string = 'Detail Tour'
   activeIndex: number = 1;
 }
