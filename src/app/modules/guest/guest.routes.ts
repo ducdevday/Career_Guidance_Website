@@ -16,6 +16,7 @@ import { QAndAComponent } from './q-and-a/q-and-a.component';
 import { DetailCourseComponent } from './detail-course/detail-course.component';
 import { DetailWorkshopComponent } from './detail-workshop/detail-workshop.component';
 import { DetailTourComponent } from './detail-tour/detail-tour.component';
+import { DetailBlogComponent } from './detail-blog/detail-blog.component';
 export const HOME_ROUTE = '';
 export const LOGIN_ROUTE = 'login';
 export const FORGOT_PASSWORD_ROUTE = 'forgot-password';
@@ -32,6 +33,7 @@ export const QNA_ROUTE = 'q-and-a';
 export const DETAIL_COURSE_ROUTE = 'detail-course';
 export const DETAIL_WORKSHOP_ROUTE = 'detail-workshop';
 export const DETAIL_TOUR_ROUTE = 'detail-tour';
+export const DETAIL_BLOG_ROUTE = 'detail-blog';
 export default [
   {
     path: '',
@@ -84,6 +86,10 @@ export default [
       {
         path: DETAIL_TOUR_ROUTE,
         component: DetailTourComponent
+      }, 
+      {
+        path: DETAIL_BLOG_ROUTE,
+        component: DetailBlogComponent
       }
     ],
   },
