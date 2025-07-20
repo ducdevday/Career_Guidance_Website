@@ -1,0 +1,131 @@
+<div class="min-h-screen">
+ <app-standard-breadcrumb [currentRoute]="title" />
+ <div class="px-6 container mt-6">
+   <div class="flex flex-col flex-1 w-full gap-8">
+     <div class="flex w-full border rounded-lg p-4 gap-4 items-center">
+       <img
+         src="assets/images/img_course.jpg"
+         class="w-[150px] h-[150px] rounded-full object-cover object-center"
+       />
+       <div class="flex flex-col flex-1">
+         <span class="text-2xl text-blackShade-strong font-bold mb-4"
+           >Vako Shvili</span
+         >
+         <span class="text-sm mb-2"
+           >Web Designer & Best-Selling Instructor</span
+         >
+         <div class="flex gap-6 items-center">
+           <div class="flex gap-1 items-center">
+             <i class="pi pi-star-fill text-[#FD8E1F]"></i>
+             <span class="text-sm text-blackShade-strong">4.8</span>
+             <span class="text-sm text-blackShade-light"
+               >(134,633 review)</span
+             >
+           </div>
+           <div class="flex gap-1 items-center">
+             <i class="pi pi-users text-blue-600"></i>
+             <span class="text-sm text-blackShade-strong">430,117</span>
+             <span class="text-sm text-blackShade-light">students</span>
+           </div>
+         </div>
+       </div>
+       <div class="flex flex-col items-end gap-2 text-sm text-gray-700">
+         <div
+           class="flex items-center gap-2 hover:text-primary-main transition-colors"
+         >
+           <i class="pi pi-globe text-lg"></i>
+           <a
+             href="https://www.vakoshvili.com"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="underline hover:no-underline truncate max-w-[200px]"
+           >
+             https://www.vakoshvili.com
+           </a>
+         </div>
+         <div class="flex gap-4 text-xl">
+           <a
+             href="https://facebook.com"
+             target="_blank"
+             class="text-blue-600"
+           >
+             <i class="pi pi-facebook"></i>
+           </a>
+           <a href="https://youtube.com" target="_blank" class="text-red-600">
+             <i class="pi pi-youtube"></i>
+           </a>
+         </div>
+       </div>
+     </div>
+     <div class="grid grid-cols-3 gap-4">
+       <div class="col-span-1 flex flex-col gap-4">
+         <div class="border rounded-lg p-4">
+           <div class="text-lg font-normal text-blackShade-strong">
+             ABOUT ME
+           </div>
+           <p class="text-sm text-blackShade-light">
+             One day Vako had enough with the 9-to-5 grind, or more like 9-to-9
+             in his case, and quit his job, or more like got himself fired from
+             his own startup. He decided to work on his dream: be his own boss,
+             travel the world, only do the work he enjoyed, and make a lot more
+             money in the process. No more begging for vacation days and living
+             from paycheck to paycheck. After trying everything from e-commerce
+             stores to professional poker his lucky break came when he started
+             freelance design. Vako fell in love with the field that gives him
+             the lifestyle of his dreams. Vako realizes that people who take
+             courses on Udemy want to transform their lives. Today with his
+             courses and mentoring Vako is helping thousands of people
+             transform their lives, just like he did once.
+           </p>
+         </div>
+         <div class="border rounded-lg p-4">
+           <div class="text-lg font-normal text-blackShade-strong">
+             CERTIFICATE
+           </div>
+           <span class="text-sm font-normal text-blackShade-light"
+             >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span
+           >
+           <img
+             src="assets/images/img_certificate.jpg"
+             class="object-cover w-full h-64"
+           />
+         </div>
+       </div>
+       <div class="col-span-2">
+         <p-tabView [(activeIndex)]="activeIndex">
+           <p-tabPanel header="Course">
+             <div
+               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1"
+             >
+               <app-standard-course></app-standard-course>
+             </div>
+           </p-tabPanel>
+           <p-tabPanel header="Workshop">
+             <div
+               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1"
+             >
+               <app-standard-workshop></app-standard-workshop>
+             </div>
+           </p-tabPanel>
+           <p-tabPanel header="Tour">
+             <div
+               class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1"
+             >
+               <app-standard-tour></app-standard-tour>
+             </div>
+           </p-tabPanel>
+           <p-tabPanel header="Review">
+             <div class="text-xl text-blackShade-main font-semibold mb-4">
+               Students Feedback
+             </div>
+             <div>
+               <app-standard-review></app-standard-review>
+               <p-divider></p-divider>
+             </div>
+           </p-tabPanel>
+         </p-tabView>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>
