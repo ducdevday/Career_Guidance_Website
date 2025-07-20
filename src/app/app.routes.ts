@@ -7,7 +7,11 @@ export const routes: Routes = [
       {
         path: '',
         loadChildren: () => import('./modules/guest/guest.routes'),
-      }
+      },
+      {
+        path: '',
+        loadChildren: () => import('./modules/main/main.routes'),
+      },
     ],
   },
 ];

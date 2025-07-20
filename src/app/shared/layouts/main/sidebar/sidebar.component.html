@@ -1,0 +1,58 @@
+<aside class="sidebar bg-white" [attr.aria-expanded]="!isCollapsed">
+ <h1 class="flex items-center font-bold text-slate-300">
+   <img [src]="logoPath" />
+ </h1>
+ <ul class="menu-links">
+   <li>
+     <a
+       class="menu-item"
+       [routerLink]="HOME_ROUTE"
+       routerLinkActive="active"
+       ariaCurrentWhenActive="page"
+       [routerLinkActiveOptions]="{ exact: true }"
+     >
+       <span class="flex items-center gap-2">
+         <i class="pi pi-home"></i>
+         Home</span
+       >
+     </a>
+   </li>
+   <li>
+     <a
+       class="menu-item"
+       [routerLink]="MY_COURSE_ROUTE"
+       routerLinkActive="active"
+       ariaCurrentWhenActive="page"
+     >
+       <span class="flex items-center gap-2">
+         <i class="pi pi-book"></i>
+         Course</span
+       >
+     </a>
+   </li>
+   <li>
+     <a
+       class="menu-item"
+       [routerLink]="HISTORY_PAYMENT_ROUTE"
+       routerLinkActive="active"
+       ariaCurrentWhenActive="page"
+     >
+       <span class="flex items-center gap-2">
+         <i class="pi pi-wallet"></i>
+         History Payment</span
+       >
+     </a>
+   </li>
+ </ul>
+</aside>
+
+<div class="collapsible-btn-container">
+ <button id="sidebar-collapse-btn" (click)="toggleSidebar()">
+   <div class="w-6 h-16 flex justify-center items-center">
+     <div class="collapsible-icons">
+       <div class="collapsible-top-icon"></div>
+       <div class="collapsible-bottom-icon"></div>
+     </div>
+   </div>
+ </button>
+</div>

@@ -1,0 +1,51 @@
+<div class="shadow-sm bg-white">
+  <div class="w-full flex justify-center items-center">
+    <header class="flex flex-row w-full h-16 items-center px-8">
+      <div
+        *ngIf="user$ | async as user; else notAuthenticated"
+        class="flex ml-auto"
+      >
+        <!-- Add notification bell with badge here -->
+        <div class="flex items-center ml-auto gap-10">
+          <i
+            class="pi pi-bell text-3xl cursor-pointer mt-2"
+            pBadge
+            value="2"
+          ></i>
+
+          <div class="card flex justify-content-center items-center">
+            <p-menu #menu [model]="userMenuItems" [popup]="true"></p-menu>
+            <div
+              class="flex items-center gap-2 cursor-pointer"
+              (click)="menu.toggle($event)"
+            >
+              <img
+                [src]="userDefaultPath"
+                alt="Profile"
+                class="w-8 h-8 rounded-full object-cover object-center"
+              />
+              <span
+                class="text-sm font-medium text-blackShade-main truncate max-w-36 select-none"
+                >{{ user.fullName }}</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <ng-template #notAuthenticated>
+        <div
+          class="flex flex-row justify-center items-center cursor-pointer select-none ml-auto"
+        >
+          <div class="card flex justify-content-center">
+            <span
+              class="text-sm font-medium text-blackShade-main truncate max-w-36"
+              (click)="onLoginOrRegisterClicked()"
+              >Log in | Register</span
+            >
+          </div>
+        </div>
+      </ng-template>
+    </header>
+  </div>
+</div>

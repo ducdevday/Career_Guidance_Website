@@ -3,6 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
 import { MessageService, PrimeNGConfig } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
+import { ToastService } from './services/toast.service';
 import { DialogModule } from 'primeng/dialog';
 import { LoadingService } from './services/loading.service';
 import { CommonModule } from '@angular/common';
@@ -22,7 +23,7 @@ import { LottieComponent } from 'ngx-lottie';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'Career Guidance System';
+  title = 'Smart Education Management System';
   loading$ = this.loadingService.loading$;
   animationOptions$ = this.loadingService.animationOptions$;
   

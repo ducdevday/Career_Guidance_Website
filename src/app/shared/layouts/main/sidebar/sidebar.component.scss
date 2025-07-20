@@ -1,0 +1,126 @@
+/* Sidebar */
+.sidebar {
+ @apply sticky top-0 px-3 min-h-screen pt-5 transition-all duration-300 border border-gray-300;
+}
+
+.sidebar[aria-expanded="true"] {
+ @apply w-60;
+}
+
+.sidebar[aria-expanded="false"] {
+ @apply w-0 p-0 overflow-hidden;
+}
+
+.sidebar[aria-expanded="false"] + .collapsible-btn-container {
+ @apply translate-x-[0.3rem];
+}
+
+.sidebar[aria-expanded="false"] + .collapsible-btn-container .collapsible-top-icon {
+ @apply rotate-[-15deg];
+}
+
+.sidebar[aria-expanded="false"] + .collapsible-btn-container .collapsible-bottom-icon {
+ @apply rotate-[15deg];
+}
+
+.sidebar[aria-expanded="true"] + .collapsible-btn-container:hover .collapsible-top-icon {
+ @apply rotate-[+15deg];
+}
+
+.sidebar[aria-expanded="true"] + .collapsible-btn-container:hover .collapsible-bottom-icon {
+ @apply rotate-[-15deg];
+}
+
+.sidebar[aria-expanded="false"] + .menu-links .menu-item span {
+ @apply hidden;
+}
+
+.collapsible-top-icon,
+.collapsible-bottom-icon {
+ @apply transition-all duration-100 ease-in-out;
+}
+
+.collapsible-btn-container {
+ @apply fixed left-0 top-1/2 translate-x-[15rem] transition-all duration-300;
+}
+
+.collapsible-top-icon {
+ @apply bg-slate-400 h-4 w-1 translate-y-[0.15rem] rounded-full;
+}
+
+.collapsible-bottom-icon {
+ @apply bg-slate-400 h-4 w-1 translate-y-[-0.15rem] rounded-full;
+}
+
+#sidebar-collapse-btn:hover .collapsible-top-icon {
+ @apply bg-slate-800;
+}
+
+#sidebar-collapse-btn:hover .collapsible-bottom-icon {
+ @apply bg-slate-800;
+}
+
+/* Sidebar Links */
+.menu-links {
+ @apply flex flex-col gap-y-3 pt-5 font-medium;
+}
+
+.menu-item {
+ @apply inline-flex w-full gap-x-2 items-center px-2 py-1 text-blackShade-main transition duration-300 ease-in-out rounded overflow-hidden cursor-pointer select-none;
+}
+
+.menu-item span {
+ @apply text-sm font-medium text-blackShade-main;
+}
+
+.menu-item.active {
+ @apply bg-primary-light;
+}
+
+.menu-item.active span {
+ @apply text-primary-strong;
+}
+
+.menu-item:hover {
+ @apply bg-primary-light;
+}
+
+.menu-item:hover span {
+ @apply text-primary-strong;
+}
+
+.menu-item i::before {
+ @apply inline;
+}
+
+.sub-menu {
+ position: relative;
+}
+
+.sub-menu[aria-expanded="true"] {
+ @apply text-primary-strong;
+}
+
+.sub-menu::after {
+ position: absolute;
+ font-size: 0.5rem;
+ right: 0;
+ padding: 0.5rem;
+ transition: all 0.2s ease-in-out;
+}
+
+.sub-menu[aria-expanded="true"]::after {
+ transform: rotateZ(90deg);
+}
+
+.sub-menu[icon-hidden]::after {
+ opacity: 0;
+}
+
+.sub-menu-item {
+ @apply flex flex-col ml-4 pl-2 border-l-2 border-primary-light text-sm overflow-hidden max-h-0 transition-[max-height] duration-300 ease-in-out gap-y-3;
+}
+
+.sub-menu[aria-expanded="true"] + .sub-menu-item {
+ @apply max-h-96;
+}
