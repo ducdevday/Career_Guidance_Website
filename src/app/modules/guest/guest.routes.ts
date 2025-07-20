@@ -19,6 +19,7 @@ import { DetailTourComponent } from './detail-tour/detail-tour.component';
 import { DetailBlogComponent } from './detail-blog/detail-blog.component';
 import { DetailQAndAComponent } from './detail-q-and-a/detail-q-and-a.component';
 import { ProfileMentorComponent } from './profile-mentor/profile-mentor.component';
+import { ProfileCompanyComponent } from './profile-company/profile-company.component';
 export const HOME_ROUTE = '';
 export const LOGIN_ROUTE = 'login';
 export const FORGOT_PASSWORD_ROUTE = 'forgot-password';
@@ -38,6 +39,7 @@ export const DETAIL_TOUR_ROUTE = 'detail-tour';
 export const DETAIL_BLOG_ROUTE = 'detail-blog';
 export const DETAIL_QNA_ROUTE = 'detail-q-and-a';
 export const PROFILE_MENTOR = 'profile-mentor';
+export const PROFILE_COMPANY = 'profile-company';
 export default [
   {
     path: '',
@@ -102,6 +104,10 @@ export default [
       {
         path: PROFILE_MENTOR,
         component: ProfileMentorComponent
+      },
+      {
+        path: PROFILE_COMPANY,
+        component: ProfileCompanyComponent
       }
     ],
   },

@@ -30,7 +30,9 @@
           </div>
         </div>
         <div class="flex flex-col items-end gap-2 text-sm text-gray-700">
-          <div class="flex items-center gap-2 hover:text-primary-main transition-colors">
+          <div
+            class="flex items-center gap-2 hover:text-primary-main transition-colors"
+          >
             <i class="pi pi-globe text-lg"></i>
             <a
               href="https://www.vakoshvili.com"
@@ -42,7 +44,11 @@
             </a>
           </div>
           <div class="flex gap-4 text-xl">
-            <a href="https://facebook.com" target="_blank" class="text-blue-600">
+            <a
+              href="https://facebook.com"
+              target="_blank"
+              class="text-blue-600"
+            >
               <i class="pi pi-facebook"></i>
             </a>
             <a href="https://youtube.com" target="_blank" class="text-red-600">
@@ -76,20 +82,40 @@
             <div class="text-lg font-normal text-blackShade-strong">
               CERTIFICATE
             </div>
-            <span class="text-sm font-normal text-blackShade-light">Lorem ipsum dolor sit amet, consectetur adipiscing elit</span>
-            <img src="assets/images/img_certificate.jpg" class="object-cover w-full h-64 " />
-
+            <span class="text-sm font-normal text-blackShade-light"
+              >Lorem ipsum dolor sit amet, consectetur adipiscing elit</span
+            >
+            <img
+              src="assets/images/img_certificate.jpg"
+              class="object-cover w-full h-64"
+            />
           </div>
         </div>
         <div class="col-span-2">
           <p-tabView [(activeIndex)]="activeIndex">
             <p-tabPanel header="Course">
-              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1">
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1"
+              >
                 <app-standard-course></app-standard-course>
               </div>
             </p-tabPanel>
+            <p-tabPanel header="Workshop">
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1"
+              >
+                <app-standard-workshop></app-standard-workshop>
+              </div>
+            </p-tabPanel>
+            <p-tabPanel header="Tour">
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 flex-1"
+              >
+                <app-standard-tour></app-standard-tour>
+              </div>
+            </p-tabPanel>
             <p-tabPanel header="Review">
-              <div class="text-xl text-blackShade-main font-semibold mb-4 ">
+              <div class="text-xl text-blackShade-main font-semibold mb-4">
                 Students Feedback
               </div>
               <div>
