@@ -1,0 +1,28 @@
+<div class="relative w-[60px] h-[60px]">
+ <svg class="transform -rotate-90" viewBox="0 0 36 36">
+   <!-- Background Circle -->
+   <path
+     class="text-gray-200"
+     d="M18 2.0845
+        a 15.9155 15.9155 0 0 1 0 31.831
+        a 15.9155 15.9155 0 0 1 0 -31.831"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="3"
+   />
+   <!-- Progress Circle -->
+   <path
+     class="text-primary-500 transition-all duration-300"
+     [attr.stroke-dasharray]="progress + ', 100'"
+     d="M18 2.0845
+        a 15.9155 15.9155 0 0 1 0 31.831
+        a 15.9155 15.9155 0 0 1 0 -31.831"
+     fill="none"
+     stroke="currentColor"
+     stroke-width="3"
+   />
+ </svg>
+ <div class="absolute inset-0 flex items-center justify-center">
+   <span class="text-sm font-semibold text-primary-main">{{ progress }}%</span>
+ </div>
+</div>
