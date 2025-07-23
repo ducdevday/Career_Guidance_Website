@@ -1,0 +1,101 @@
+<app-standard-title title="Account Setting"></app-standard-title>
+<div class="mt-4">
+  <app-standard-card>
+    <div class="grid grid-cols-3 p-8">
+      <div class="col-span-1">
+        <div class="flex justify-center">
+         <div class="relative">
+          <img
+            src="assets/images/img_course.jpg"
+            class="object-contain w-[400px] rounded-xl"
+          />
+          <div class="absolute bottom-0 left-0 right-0 h-[30px]">
+            <div class="flex text-base font-medium text-white gap-2 w-full justify-center bg-blackShade-strong bg-opacity-50 cursor-pointer">
+             <i class="pi pi-upload "></i>
+             <span>Upload</span>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+      <div class="col-span-2">
+        <div class="flex flex-col gap-3">
+          <div>
+            <app-standard-input-label> Name </app-standard-input-label>
+            <div class="grid grid-cols-3 gap-2">
+              <input
+                type="text"
+                pInputText
+                class="w-full"
+                placeholder="First Name"
+                formControlName="firstName"
+              />
+
+              <input
+                type="text"
+                pInputText
+                class="w-full"
+                placeholder="Middle Name"
+                formControlName="middleName"
+              />
+
+              <input
+                type="text"
+                pInputText
+                class="w-full"
+                placeholder="Last Name"
+                formControlName="lastName"
+              />
+            </div>
+          </div>
+          <div>
+            <app-standard-input-label> Gender </app-standard-input-label>
+            <p-dropdown
+              optionLabel="name"
+              [options]="genderTypes"
+              placeholder="Gender"
+              styleClass="w-full"
+              formControlName="gender"
+            />
+          </div>
+          <div>
+            <app-standard-input-label> Date Of Birth </app-standard-input-label>
+            <p-calendar
+              placeholder="BirthDate"
+              styleClass="w-full"
+              formControlName="dateOfBirth"
+            />
+          </div>
+          <div >
+           <app-standard-input-label> Email </app-standard-input-label>
+           <input
+             type="email"
+             pInputText
+             class="w-full"
+             placeholder="Email"
+             formControlName="email"
+           />
+         </div>
+          <div >
+           <app-standard-input-label> Phone Number </app-standard-input-label>
+           <input
+             type="text"
+             pInputText
+             class="w-full"
+             placeholder="Phone Number"
+             formControlName="phoneNumber"
+           />
+         </div>
+          <div class="ml-auto">
+            <app-standard-button
+              label="Save Changed"
+              styleClass="primary w-[300px] "
+              class="mt-2"
+              type="submit"
+            ></app-standard-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </app-standard-card>
+</div>

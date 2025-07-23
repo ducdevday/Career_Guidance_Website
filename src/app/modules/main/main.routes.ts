@@ -4,10 +4,14 @@ import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './home/home.component';
 import { MyCourseComponent } from './my-course/my-course.component';
 import { HistoryRegisterComponent } from './history-register/history-register.component';
+import { AccountSettingComponent } from './account-setting/account-setting.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 export const HOME_ROUTE = 'home';
 export const MY_COURSE_ROUTE = 'my-course';
 export const HISTORY_REGISTER = 'history-register';
+export const ACCOUNT_SETTING = 'account-setting';
+export const CHANGE_PASSWORD = 'change-password';
 export default [
   {
     path: '',
@@ -25,6 +29,14 @@ export default [
       {
         path: HISTORY_REGISTER,
         component: HistoryRegisterComponent
+      },
+      {
+        path: ACCOUNT_SETTING,
+        component: AccountSettingComponent
+      },
+      {
+        path: CHANGE_PASSWORD,
+        component: ChangePasswordComponent
       }
     ],
   },
