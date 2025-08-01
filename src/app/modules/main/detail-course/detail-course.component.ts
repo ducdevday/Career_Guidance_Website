@@ -7,7 +7,9 @@ import { TabViewModule } from 'primeng/tabview';
 import { ProgressBarModule } from 'primeng/progressbar';
 import { CommonModule } from '@angular/common';
 import { DetailCourseLessonComponent } from './detail-course-lesson/detail-course-lesson.component';
-import { Button } from "primeng/button";
+import { DialogModule } from 'primeng/dialog';
+import { Button } from 'primeng/button';
+import { RatingModule } from 'primeng/rating';
 @Component({
   selector: 'app-detail-course',
   standalone: true,
@@ -20,7 +22,10 @@ import { Button } from "primeng/button";
     ProgressBarModule,
     DetailCourseLessonComponent,
     CommonModule,
-],
+    DialogModule,
+    Button,
+    RatingModule,
+  ],
   templateUrl: './detail-course.component.html',
   styleUrl: './detail-course.component.scss',
 })
@@ -46,12 +51,14 @@ export class DetailCourseComponent {
       ],
     },
   ];
+  visibleReview = false;
   comments = [
     {
       user: 'Ronald Richards',
       time: '1 week ago',
       avatar: 'https://i.pravatar.cc/40?img=5',
-      content: 'Maecenas risus tortor, tincidunt nec purus eu, gravida suscipit tortor.',
+      content:
+        'Maecenas risus tortor, tincidunt nec purus eu, gravida suscipit tortor.',
       replies: [
         {
           user: 'Kristin Watson',
@@ -70,7 +77,18 @@ export class DetailCourseComponent {
       ],
     },
   ];
+  stars = [1, 2, 3, 4, 5];
+  rating = 0; // sao đã chọn
+  hoverRating = 0; // sao đang hover
+
+  selectRating(value: number) {
+    this.rating = value;
+  }
   onPreviousLectureClicked() {}
 
   onNextLectureClicked() {}
+
+  showDialog() {
+    this.visibleReview = true;
+  }
 }

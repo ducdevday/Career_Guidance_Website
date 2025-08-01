@@ -136,3 +136,18 @@
 ::ng-deep .course-progress-bar .p-progressbar-label {
  display: none; 
 }
+
+//Button
+
+::ng-deep .p-dialog-header-close.p-button{
+ background: none;
+ border:none;
+ &:hover{
+  background: none;
+  border:none;
+ }
+ &:focus{
+  outline: none;
+    box-shadow: none;
+ }
+}
