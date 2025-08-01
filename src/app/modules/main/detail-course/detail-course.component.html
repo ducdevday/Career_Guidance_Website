@@ -1,0 +1,163 @@
+<div>
+  <!-- Header -->
+  <div class="flex items-center px-6 py-4 gap-4 bg-[#F5F7FA] mb-8">
+    <div
+      class="rounded-full w-[50px] h-[50px] flex items-center justify-center text-blackShade-light bg-white"
+    >
+      <i class="pi pi-arrow-left"></i>
+    </div>
+    <div class="flex flex-col gap-4 flex-1">
+      <div class="text-lg text-blackShade-strong font-medium">
+        Complete Website Responsive Design: from Figma to Webflow to Website
+        Design
+      </div>
+      <div class="flex gap-4">
+        <div class="flex gap-2 text-sm">
+          <i class="pi pi-folder-open text-[#FF6636]"></i>
+          <span class="text-blackShade-main">6 Sections</span>
+        </div>
+        <div class="flex gap-2 text-sm">
+          <i class="pi pi-play-circle text-[#564FFD]"></i>
+          <span class="text-blackShade-main">202 lectures</span>
+        </div>
+        <div class="flex gap-2 text-sm">
+          <i class="pi pi-clock text-[#FD8E1F]"></i>
+          <span class="text-blackShade-main">19h 37m</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex gap-4">
+      <app-standard-button
+        label="Previous Lecture"
+        styleClass="white w-100 rounded-xl"
+        (onClick)="onPreviousLectureClicked()"
+      />
+      <app-standard-button
+        label="Next Lecture"
+        styleClass="primary w-100 rounded-xl"
+        (onClick)="onNextLectureClicked()"
+      />
+    </div>
+  </div>
+  <!-- Body -->
+  <div class="min-h-screen px-6 grid grid-cols-10 gap-6">
+    <div class="col-span-7 flex flex-col">
+      <video controls class="w-full rounded-2xl mb-4">
+        <source src="assets/videos/sample.mp4" type="video/mp4" />
+        Trình duyệt của bạn không hỗ trợ video.
+      </video>
+      <div class="text-2xl font-semibold text-blackShade-strong mb-2">
+        2. Sign up in Webflow
+      </div>
+      <div class="flex justify-between">
+        <div class="flex gap-4">
+          <p-avatarGroup styleClass="mb-3">
+            <p-avatar
+              image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+              size="large"
+              shape="circle"
+            />
+            <p-avatar
+              image="https://primefaces.org/cdn/primeng/images/demo/avatar/asiyajavayant.png"
+              size="large"
+              shape="circle"
+            />
+          </p-avatarGroup>
+          <div class="flex flex-col">
+            <div class="text-sm text-blackShade-strong">512</div>
+            <div class="text-sm text-blackShade-light">Student watching</div>
+          </div>
+        </div>
+        <div class="text-sm">
+          <span>Last updated: </span>
+          <span>Oct 26, 2020</span>
+        </div>
+      </div>
+      <div class="bg-gray-200 w-full h-[1px]"></div>
+      <p-tabView [(activeIndex)]="activeIndex">
+        <p-tabPanel header="Description">
+          <div class="text-lg text-blackShade-strong">Lectures Description</div>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+            culpa qui officia deserunt mollit anim id est laborum.
+          </p>
+        </p-tabPanel>
+        <p-tabPanel header="Attach File">
+          <div class="text-lg text-blackShade-strong font-medium mb-5">Attach File (01)</div>
+          <div class="flex flex-col gap-6">
+            <div class="flex rounded-md py-2 px-4 bg-[#F5F7FA] items-center">
+              <i class="pi pi-file " ></i>
+              <div class="flex flex-col ml-4 flex-1">
+                <div class="font-semibold text-base text-blackShade-main">Create account on webflow.pdf</div>
+                <div class="font-light text-sm text-blackShade-light">12.6MB</div>
+              </div>
+              <app-standard-button
+              label="Download File"
+              styleClass="primary rounded-xl"
+              class="mt-2"
+            ></app-standard-button>
+            </div>
+          </div>
+        </p-tabPanel>
+        <p-tabPanel header="Comments"> 
+          <div class="text-lg text-blackShade-strong font-medium mb-5">Comments</div>
+          <div class="space-y-6">
+            <div *ngFor="let comment of comments">
+              <div class="flex gap-4">
+                <div class="flex flex-col items-center">
+                  <img [src]="comment.avatar" class="w-16 aspect-square object-cover rounded-full" />
+                  <div class="w-[0.25px] h-full bg-gray-200"></div>
+                </div>
+                <div>
+                  <div class="font-semibold">{{ comment.user }}</div>
+                  <div class="text-xs text-gray-500">{{ comment.time }}</div>
+                  <p class="mt-1 text-gray-700">{{ comment.content }}</p>
+                  <div class="p-0 text-sm mt-2 flex gap-2"><i class="pi pi-comments" ></i><span>Reply</span></div>
+          
+                  <div class="ml-10 mt-4 space-y-6" *ngIf="comment.replies">
+                    <div *ngFor="let reply of comment.replies" class="flex gap-4">
+                      <img [src]="reply.avatar" class="w-10 h-10 rounded-full" />
+                      <div>
+                        <div class="flex items-center gap-2">
+                          <div class="font-semibold">{{ reply.user }}</div>
+                          <span *ngIf="reply.isAuthor" class="text-xs bg-blue-100 text-blue-800 px-2 py-0.5 rounded">AUTHOR</span>
+                        </div>
+                        <div class="text-xs text-gray-500">{{ reply.time }}</div>
+                        <p class="mt-1 text-gray-700">{{ reply.content }}</p>
+                        <div class="p-0 text-sm mt-2 flex gap-2"><i class="pi pi-comments" ></i><span>Reply</span></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </p-tabPanel>
+      </p-tabView>
+    </div>
+    <div class="col-span-3">
+      <div class="flex justify-between items-center mb-2">
+        <span class="text-blackShade-main text-xl font-bold"
+          >Course Contents</span
+        >
+        <span class="text-blackShade-main text-sm font-light"
+          >15% Complete</span
+        >
+      </div>
+      <p-progressBar [value]="50" styleClass="course-progress-bar" />
+      <div class="border rounded-xl mt-4">
+        <app-detail-course-lesson
+          *ngFor="let section of sections; let last = last"
+          [section]="section"
+          [hideDivider]="last"
+        ></app-detail-course-lesson>
+        
+      </div>
+    </div>
+  </div>
+</div>

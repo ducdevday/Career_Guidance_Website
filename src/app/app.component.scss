@@ -121,3 +121,18 @@
 :host ::ng-deep .p-dropdown-panel .p-dropdown-items .p-dropdown-item {
  font-size: 0.9rem !important;
 }
+
+// Css Process Bar
+::ng-deep .course-progress-bar {
+ height: 10px; 
+ background-color: #eee; 
+}
+
+::ng-deep .course-progress-bar .p-progressbar-value {
+ background-color: var(--primary-main); 
+ height: 100%;
+}
+
+::ng-deep .course-progress-bar .p-progressbar-label {
+ display: none; 
+}
