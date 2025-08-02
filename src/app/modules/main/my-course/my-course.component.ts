@@ -13,8 +13,7 @@ import { CircleProcessbarComponent } from "../../../shared/components/circle-pro
 @Component({
   selector: 'app-my-course',
   standalone: true,
-  imports: [CommonModule,
-    InputTextModule, StandardTitleComponent, StandardCardComponent, CalendarModule, MainSearchComponent, MainSortComponent, MainFilterComponent, DividerModule, CircleProcessbarComponent],
+  imports: [CommonModule, InputTextModule, StandardTitleComponent, StandardCardComponent, CalendarModule, MainSearchComponent, MainSortComponent, MainFilterComponent, DividerModule, CircleProcessbarComponent],
   templateUrl: './my-course.component.html',
   styleUrl: './my-course.component.scss'
 })
