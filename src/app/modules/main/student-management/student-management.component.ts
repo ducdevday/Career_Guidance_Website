@@ -1,19 +1,18 @@
-import { Component } from '@angular/core';
-import { StandardTitleComponent } from "../../../shared/components/standard-title/standard-title.component";
 import { CommonModule } from '@angular/common';
-import { InputTextModule } from 'primeng/inputtext';
-import { StandardCardComponent } from '../../../shared/components/standard-card/standard-card.component';
+import { Component } from '@angular/core';
 import { CalendarModule } from 'primeng/calendar';
+import { DividerModule } from 'primeng/divider';
+import { InputTextModule } from 'primeng/inputtext';
+import { TableModule } from "primeng/table";
 import { MainSearchComponent } from '../../../shared/components/main-search/main-search.component';
 import { MainSortComponent } from '../../../shared/components/main-sort/main-sort.component';
-import { MainFilterComponent } from '../../../shared/components/main-filter/main-filter.component';
-import { DividerModule } from 'primeng/divider';
-import { TableModule } from "primeng/table";
+import { StandardCardComponent } from '../../../shared/components/standard-card/standard-card.component';
+import { StandardTitleComponent } from "../../../shared/components/standard-title/standard-title.component";
 
 @Component({
   selector: 'app-student-management',
   standalone: true,
-  imports: [CommonModule, InputTextModule, StandardTitleComponent, StandardCardComponent, CalendarModule, MainSearchComponent, MainSortComponent, MainFilterComponent, DividerModule, TableModule],
+  imports: [CommonModule, InputTextModule, StandardTitleComponent, StandardCardComponent, CalendarModule, MainSearchComponent, MainSortComponent, DividerModule, TableModule],
   templateUrl: './student-management.component.html',
   styleUrl: './student-management.component.scss'
 })
