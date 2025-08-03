@@ -10,40 +10,63 @@ import { DividerModule } from 'primeng/divider';
 import { TableModule } from 'primeng/table';
 
 @Component({
-  selector: 'app-mentor-management',
+  selector: 'app-company-management',
   standalone: true,
   imports: [CommonModule, InputTextModule, StandardTitleComponent, StandardCardComponent, CalendarModule, MainSearchComponent, MainSortComponent, DividerModule, TableModule],
-  templateUrl: './mentor-management.component.html',
-  styleUrl: './mentor-management.component.scss'
+  templateUrl: './company-management.component.html',
+  styleUrl: './company-management.component.scss'
 })
-export class MentorManagementComponent {
+export class CompanyManagementComponent {
   sortBy = 'Date';
   status = 'Finish';
 
   sortOptions = ['Date', 'Name'];
-  mentors = [
+  companies = [
     {
       id: 1,
-      name: 'Nguyen Van A',
-      email: 'a.nguyen@example.com',
-      phone: '0909123456',
-      industry: 'Software',
-      position: 'Senior Developer',
-      yoe: 5,
+      name: 'FPT Software',
+      email: 'contact@fpt.com.vn',
+      phone: '028 9999 8888',
+      industry: 'Software Outsourcing',
       status: 'Active',
       createdDate: '2023-07-01',
     },
     {
       id: 2,
-      name: 'Tran Thi B',
-      email: 'b.tran@example.com',
-      phone: '0911222333',
-      industry: 'Finance',
-      position: 'Financial Analyst',
-      yoe: 7,
+      name: 'Viettel Group',
+      email: 'info@viettel.com.vn',
+      phone: '024 7890 1234',
+      industry: 'Telecommunications',
       status: 'DeActive',
       createdDate: '2023-06-15',
     },
+    {
+      id: 3,
+      name: 'Tiki Corporation',
+      email: 'support@tiki.vn',
+      phone: '1900 6035',
+      industry: 'E-commerce',
+      status: 'Active',
+      createdDate: '2023-08-01',
+    },
+    {
+      id: 4,
+      name: 'Shopee Vietnam',
+      email: 'care@shopee.vn',
+      phone: '1900 1221',
+      industry: 'Online Retail',
+      status: 'DeActive',
+      createdDate: '2023-05-10',
+    },
+    {
+      id: 5,
+      name: 'Grab Holdings',
+      email: 'support@grab.com',
+      phone: '028 7300 5588',
+      industry: 'Transportation & Delivery',
+      status: 'Active',
+      createdDate: '2023-04-20',
+    }
   ];
   
   onSearch(value: string) {
