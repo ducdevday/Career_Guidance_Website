@@ -3,14 +3,13 @@ import { StandardBreadcrumbComponent } from "../../../shared/components/standard
 import { TabViewModule } from "primeng/tabview";
 import { StandardCourseComponent } from "../../../shared/components/standard-course/standard-course.component";
 import { StandardWorkshopComponent } from "../../../shared/components/standard-workshop/standard-workshop.component";
-import { StandardTourComponent } from "../../../shared/components/standard-tour/standard-tour.component";
 import { StandardReviewComponent } from "../../../shared/components/standard-review/standard-review.component";
 import { DividerModule } from "primeng/divider";
 
 @Component({
   selector: 'app-profile-school',
   standalone: true,
-  imports: [StandardBreadcrumbComponent, TabViewModule, StandardCourseComponent, StandardWorkshopComponent, StandardTourComponent, StandardReviewComponent, DividerModule],
+  imports: [StandardBreadcrumbComponent, TabViewModule, StandardCourseComponent, StandardWorkshopComponent, StandardReviewComponent, DividerModule],
   templateUrl: './profile-school.component.html',
   styleUrl: './profile-school.component.scss'
 })

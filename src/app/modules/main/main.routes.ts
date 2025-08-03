@@ -13,9 +13,7 @@ import { CourseManagementComponent } from './course-management/course-management
 import { MentorManagementComponent } from './mentor-management/mentor-management.component';
 import { SchoolManagementComponent } from './school-management/school-management.component';
 import { StudentManagementComponent } from './student-management/student-management.component';
-import { TourManagementComponent } from './tour-management/tour-management.component';
 import { WorkshopManagementComponent } from './workshop-management/workshop-management.component';
-import { CompanyManagementComponent } from './company-management/company-management.component';
 
 export const HOME_ROUTE = 'home';
 export const MY_COURSE_ROUTE = 'my-course';
@@ -29,9 +27,7 @@ export const COURSE_MANAGEMENT = 'course-management';
 export const MENTOR_MANAGEMENT = 'mentor-management';
 export const SCHOOL_MANAGEMENT = 'school-management';
 export const STUDENT_MANAGEMENT = 'student-management';
-export const TOUR_MANAGEMENT = 'tour-management';
 export const WORKSHOP_MANAGEMENT = 'workshop-management';
-export const COMPANY_MANAGEMENT = 'company-management';
 export default [
   {
     path: '',
@@ -83,16 +79,8 @@ export default [
         component: StudentManagementComponent
       },
       {
-        path: TOUR_MANAGEMENT,
-        component: TourManagementComponent
-      },
-      {
         path: WORKSHOP_MANAGEMENT,
         component: WorkshopManagementComponent
-      },
-      {
-        path: COMPANY_MANAGEMENT,
-        component: CompanyManagementComponent
       }
     ],
   },
