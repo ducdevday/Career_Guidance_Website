@@ -22,7 +22,7 @@ export class BlogManagementComponent {
   status = 'Finish';
 
   sortOptions = ['Date', 'Name'];
-  statusOptions = ['New', 'Approved', 'Rejected'];
+  statusOptions = ['All','New', 'Approved', 'Rejected'];
   blogs = [
     {
       id: 1,
