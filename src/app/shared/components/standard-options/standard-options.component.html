@@ -1,0 +1,19 @@
+<div class="flex flex-wrap justify-between">
+ <div class="flex gap-4 w-full justify-center text-sm text-blackShade-main font-normal">
+   <ng-container *ngFor="let button of finalButtons; let i = index">
+     <div
+       class="flex gap-1 items-center transition-colors duration-200"
+       [ngClass]="{
+         'cursor-pointer hover:text-primary-main': !button.disabled,
+         'opacity-50 cursor-not-allowed': button.disabled,
+         'border-l border-gray-300 pl-4': i !== 0
+       }"
+       (click)="onClick(button)"
+     >
+       <i class="pi" [ngClass]="button.icon"></i>
+       <span>{{ button.label }}</span>
+     </div>
+   </ng-container>
+ </div>
+ <div class="w-full border border-gray-300 mt-2"></div>
+</div>
