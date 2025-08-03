@@ -4,7 +4,7 @@ import { StandardCardComponent } from "../../../shared/components/standard-card/
 import { StandardInputLabelComponent } from "../../../shared/components/standard-input-label/standard-input-label.component";
 import { DropdownModule } from "primeng/dropdown";
 import { CalendarModule } from "primeng/calendar";
-import { StandardButtonComponent } from "../../../shared/components/standard-button/standard-button.component";
+import { InputSwitchModule } from 'primeng/inputswitch';
 import { GenderTypeData } from '../../../shared/enums/gender-type';
 import { InputTextModule } from 'primeng/inputtext';
 import { StandardOptionsComponent } from "../../../shared/components/standard-options/standard-options.component";
@@ -12,7 +12,7 @@ import { StandardOptionsComponent } from "../../../shared/components/standard-op
 @Component({
   selector: 'app-student-detail',
   standalone: true,
-  imports: [StandardTitleComponent, StandardCardComponent, StandardInputLabelComponent, DropdownModule, CalendarModule, InputTextModule, StandardButtonComponent, StandardOptionsComponent],
+  imports: [StandardTitleComponent, StandardCardComponent, StandardInputLabelComponent, DropdownModule, CalendarModule, InputTextModule, StandardOptionsComponent, InputSwitchModule],
   templateUrl: './student-detail.component.html',
   styleUrl: './student-detail.component.scss'
 })
