@@ -1,0 +1,126 @@
+<app-standard-title title="Mentor Detail"></app-standard-title>
+<div class="mt-4">
+  <app-standard-card>
+    <app-standard-options
+      [showSave]="true"
+      [showClose]="true"
+      (buttonClick)="onActionClick($event)"
+    ></app-standard-options>
+    <div class="grid grid-cols-3 p-8">
+      <div class="col-span-1">
+        <div class="flex justify-center">
+          <div>
+            <img
+              src="assets/images/img_course.jpg"
+              class="object-cover aspect-square w-[200px] rounded-full"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="col-span-2">
+        <div class="flex flex-col gap-3">
+          <div>
+            <app-standard-input-label> Name </app-standard-input-label>
+            <div class="grid grid-cols-3 gap-2">
+              <input
+                type="text"
+                pInputText
+                class="w-full"
+                placeholder="First Name"
+                formControlName="firstName"
+              />
+
+              <input
+                type="text"
+                pInputText
+                class="w-full"
+                placeholder="Middle Name"
+                formControlName="middleName"
+              />
+
+              <input
+                type="text"
+                pInputText
+                class="w-full"
+                placeholder="Last Name"
+                formControlName="lastName"
+              />
+            </div>
+          </div>
+          <div>
+            <app-standard-input-label> Gender </app-standard-input-label>
+            <p-dropdown
+              optionLabel="name"
+              [options]="genderTypes"
+              placeholder="Gender"
+              styleClass="w-full"
+              formControlName="gender"
+            />
+          </div>
+          <div>
+            <app-standard-input-label> Date Of Birth </app-standard-input-label>
+            <p-calendar
+              placeholder="BirthDate"
+              styleClass="w-full"
+              formControlName="dateOfBirth"
+            />
+          </div>
+          <div>
+            <app-standard-input-label> Email </app-standard-input-label>
+            <input
+              type="email"
+              pInputText
+              class="w-full"
+              placeholder="Email"
+              formControlName="email"
+            />
+          </div>
+          <div>
+            <app-standard-input-label> Phone Number </app-standard-input-label>
+            <input
+              type="text"
+              pInputText
+              class="w-full"
+              placeholder="Phone Number"
+              formControlName="phoneNumber"
+            />
+          </div>
+          <div>
+            <app-standard-input-label> Industry </app-standard-input-label>
+            <p-dropdown
+              optionLabel="name"
+              [options]="industries"
+              placeholder="Industry"
+              styleClass="w-full"
+              formControlName="industry"
+            />
+          </div>
+          <div>
+            <app-standard-input-label> Position </app-standard-input-label>
+            <input
+              type="text"
+              pInputText
+              class="w-full"
+              placeholder="Position"
+              formControlName="position"
+            />
+          </div>
+          <div>
+           <app-standard-input-label> YOE </app-standard-input-label>
+           <input
+             type="number"
+             pInputText
+             class="w-full"
+             placeholder="YOE"
+             formControlName="yoe"
+           />
+         </div>
+          <div>
+            <app-standard-input-label> Active </app-standard-input-label>
+            <p-inputSwitch />
+          </div>
+        </div>
+      </div>
+    </div>
+  </app-standard-card>
+</div>

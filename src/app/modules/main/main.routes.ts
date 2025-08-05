@@ -15,6 +15,7 @@ import { SchoolManagementComponent } from './school-management/school-management
 import { StudentManagementComponent } from './student-management/student-management.component';
 import { WorkshopManagementComponent } from './workshop-management/workshop-management.component';
 import { StudentDetailComponent } from './student-detail/student-detail.component';
+import { MentorDetailComponent } from './mentor-detail/mentor-detail.component';
 
 export const HOME_ROUTE = 'home';
 export const MY_COURSE_ROUTE = 'my-course';
@@ -30,6 +31,7 @@ export const SCHOOL_MANAGEMENT = 'school-management';
 export const STUDENT_MANAGEMENT = 'student-management';
 export const WORKSHOP_MANAGEMENT = 'workshop-management';
 export const STUDENT_DETAIL = 'student-management/student-id';
+export const MENTOR_DETAIL = 'mentor-management/mentor-id';
 
 export default [
   {
@@ -88,6 +90,10 @@ export default [
       {
         path: STUDENT_DETAIL,
         component: StudentDetailComponent
+      },
+      {
+        path: MENTOR_DETAIL,
+        component: MentorDetailComponent
       }
     ],
   },

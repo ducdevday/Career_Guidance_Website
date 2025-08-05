@@ -8,16 +8,17 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { GenderTypeData } from '../../../shared/enums/gender-type';
 import { InputTextModule } from 'primeng/inputtext';
 import { StandardOptionsComponent } from "../../../shared/components/standard-options/standard-options.component";
-
+import { IndustryData } from '../../../shared/models/industry';
 @Component({
-  selector: 'app-student-detail',
+  selector: 'app-mentor-detail',
   standalone: true,
   imports: [StandardTitleComponent, StandardCardComponent, StandardInputLabelComponent, DropdownModule, CalendarModule, InputTextModule, StandardOptionsComponent, InputSwitchModule],
-  templateUrl: './student-detail.component.html',
-  styleUrl: './student-detail.component.scss'
+  templateUrl: './mentor-detail.component.html',
+  styleUrl: './mentor-detail.component.scss'
 })
-export class StudentDetailComponent {
+export class MentorDetailComponent {
   genderTypes = GenderTypeData
+  industries = IndustryData
   onActionClick(action: string) {
     switch (action) {
       case 'save':
