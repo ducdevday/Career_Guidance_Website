@@ -1,0 +1,92 @@
+<app-standard-title title="Blog Detail"></app-standard-title>
+<div class="mt-4">
+  <app-standard-card>
+    <app-standard-options
+      [showSave]="true"
+      [showClose]="true"
+      (buttonClick)="onActionClick($event)"
+      [buttons]="buttons"
+    ></app-standard-options>
+    <div class="flex flex-col gap-3">
+<div
+class="relative border-2 border-dashed border-gray-300 rounded-lg w-[300px] h-48 cursor-pointer overflow-hidden ml-auto mr-auto mt-10"
+[ngClass]="{ 'group': thumbnail }"
+(click)="fileInput.click()"
+>
+<img
+  *ngIf="thumbnail"
+  [src]="thumbnail"
+  class="w-full h-full object-cover"
+  alt="Thumbnail"
+/>
+
+<div *ngIf="!thumbnail" class="flex items-center justify-center w-full h-full">
+  <div class="text-center">
+    <img
+      src="https://img.icons8.com/ios/50/image--v1.png"
+      class="w-10 h-10 mx-auto mb-2"
+    />
+    <p class="text-sm text-gray-500">Upload Image</p>
+  </div>
+</div>
+
+<div
+  *ngIf="thumbnail"
+  class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition"
+>
+  <div class="flex flex-col gap-2 items-center">
+    <i class="pi pi-upload" style="color: #fff"></i>
+    <span style="color: #fff">Upload Thumbnail</span>
+  </div>
+</div>
+
+<input
+  type="file"
+  #fileInput
+  hidden
+  (change)="onFileSelected($event)"
+  accept="image/*"
+/>
+</div>
+
+      <div>
+        <app-standard-input-label> Title </app-standard-input-label>
+        <input
+          type="text"
+          pInputText
+          class="w-full"
+          placeholder="Title"
+          formControlName="title"
+        />
+      </div>
+      <div>
+        <app-standard-input-label>
+          Time For Read (minutes)
+        </app-standard-input-label>
+        <input
+          type="number"
+          pInputText
+          class="w-full"
+          placeholder="10"
+          formControlName="timeForRead"
+        />
+      </div>
+      <div>
+        <app-standard-input-label> Industry </app-standard-input-label>
+        <p-dropdown
+          optionLabel="name"
+          [options]="industries"
+          placeholder="Industry"
+          styleClass="w-full"
+          formControlName="industry"
+        />
+      </div>
+      <div>
+        <app-standard-input-label> Content </app-standard-input-label>
+        <div class="card">
+          <p-editor [style]="{ height: '320px' }" />
+        </div>
+      </div>
+    </div>
+  </app-standard-card>
+</div>
