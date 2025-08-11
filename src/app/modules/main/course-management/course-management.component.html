@@ -1,1 +1,57 @@
-<p>course-management works!</p>
+<app-standard-title title="Course Management"></app-standard-title>
+<div class="mt-4">
+  <app-standard-card>
+    <div class="flex flex-col gap-8">
+      <div class="flex items-center gap-6">
+        <app-main-search (search)="onSearch($event)"></app-main-search>
+        <app-main-sort
+          [value]="sortBy"
+          [options]="sortOptions"
+          (sortByChange)="onSortByChange($event)"
+        >
+        </app-main-sort>
+        <app-main-filter
+          [value]="status"
+          [options]="statusOptions"
+          (statusChange)="onStatusChange($event)"
+        >
+        </app-main-filter>
+      </div>
+      <div >
+       <p-table [value]="courses" stripedRows>
+        <ng-template pTemplate="header">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Num Lessons </th>
+            <th>Duration </th>
+            <th>Status</th>
+            <th>Created By</th>
+            <th>Created Date</th>
+            <th>Detail</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-course>
+          <tr>
+            <td class="text-sm text-blackShade-main font-normal">{{ course.id }}</td>
+            <td class="text-sm text-blackShade-main font-normal">{{ course.name }}</td>
+            <td class="text-sm text-blackShade-main font-normal">{{ course.category }}</td>
+            <td class="text-sm text-blackShade-main font-normal">{{ course.numLessons }}</td>
+            <td class="text-sm text-blackShade-main font-normal">{{ course.duration }}</td>
+            <td class="text-sm text-blackShade-main font-normal" [ngClass]="{
+             'bg-green-100 text-green-700': course.status === 'Approved',
+             'bg-yellow-100 text-yellow-700': course.status === 'New',
+             'bg-gray-100 text-gray-600': course.status === 'Rejected'
+           }">{{ course.status }}</td>
+            <td class="text-sm text-blackShade-main font-normal">{{ course.createdBy }}</td>
+            <td class="text-sm text-blackShade-main font-normal">{{ course.createdDate }}</td>
+            <td class="text-sm text-blackShade-main font-normal"><span class="text-sm text-primary-main font-bold cursor-pointer">Show</span></td>
+          </tr>
+        </ng-template>
+      </p-table>
+      </div>
+    </div>
+
+  </app-standard-card>
+</div>
