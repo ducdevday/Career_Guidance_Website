@@ -19,6 +19,8 @@ import { MentorDetailComponent } from './mentor-detail/mentor-detail.component';
 import { SchoolDetailComponent } from './school-detail/school-detail.component';
 import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { WorkshopDetailComponent } from './workshop-detail/workshop-detail.component';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { ChapterDetailComponent } from './chapter-detail/chapter-detail.component';
 
 export const HOME_ROUTE = 'home';
 export const MY_COURSE_ROUTE = 'my-course';
@@ -38,6 +40,8 @@ export const MENTOR_DETAIL = 'mentor-management/mentor-id';
 export const SCHOOL_DETAIL = 'school-management/school-id';
 export const BLOG_DETAIL = 'blog-management/blog-id';
 export const WORKSHOP_DETAIL = 'workshop-management/workshop-id';
+export const COURSE_DETAIL = 'course-management/course-id';
+export const CHAPTER_DETAIL = 'course-management/course-id/chapter-management/chapter-id';
 
 export default [
   {
@@ -112,6 +116,14 @@ export default [
       {
         path: WORKSHOP_DETAIL,
         component: WorkshopDetailComponent
+      },
+      {
+        path: COURSE_DETAIL,
+        component: CourseDetailComponent
+      },
+      {
+        path: CHAPTER_DETAIL,
+        component: ChapterDetailComponent
       }
     ],
   },

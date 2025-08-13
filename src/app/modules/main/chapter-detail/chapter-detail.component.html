@@ -1,4 +1,4 @@
-<app-standard-title title="Course Detail"></app-standard-title>
+<app-standard-title title="Chapter Detail"></app-standard-title>
 <div class="mt-4">
   <app-standard-card>
     <app-standard-options
@@ -63,26 +63,10 @@
               formControlName="title"
             />
           </div>
-          <div>
-            <app-standard-input-label> Industry </app-standard-input-label>
-            <p-dropdown
-              optionLabel="name"
-              [options]="industries"
-              placeholder="Industry"
-              styleClass="w-full"
-              formControlName="industry"
-            />
-          </div>
-          <div>
-            <app-standard-input-label> Description </app-standard-input-label>
-            <div class="card">
-              <p-editor [style]="{ height: '320px' }" />
-            </div>
-          </div>
         </div>
       </p-tabPanel>
-      <p-tabPanel header="Chapters">
-       <p-table [value]="chapters" stripedRows>
+      <p-tabPanel header="Lessons">
+       <p-table [value]="lessons" stripedRows>
         <ng-template pTemplate="header">
           <tr>
             <th>ID</th>
@@ -92,12 +76,12 @@
             <th>Detail</th>
           </tr>
         </ng-template>
-        <ng-template pTemplate="body" let-chapter>
+        <ng-template pTemplate="body" let-lesson>
           <tr>
-            <td class="text-sm text-blackShade-main font-normal">{{ chapter.id }}</td>
-            <td class="text-sm text-blackShade-main font-normal">{{ chapter.name }}</td>
-            <td class="text-sm text-blackShade-main font-normal">{{ chapter.numericalOrder }}</td>
-            <td class="text-sm text-blackShade-main font-normal">{{ chapter.createdDate }}</td>
+            <td class="text-sm text-blackShade-main font-normal">{{ lesson.id }}</td>
+            <td class="text-sm text-blackShade-main font-normal">{{ lesson.name }}</td>
+            <td class="text-sm text-blackShade-main font-normal">{{ lesson.numericalOrder }}</td>
+            <td class="text-sm text-blackShade-main font-normal">{{ lesson.createdDate }}</td>
             <td class="text-sm text-blackShade-main font-normal"><span class="text-sm text-primary-main font-bold cursor-pointer">Show</span></td>
           </tr>
         </ng-template>

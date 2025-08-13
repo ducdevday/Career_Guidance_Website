@@ -12,26 +12,25 @@ import { IndustryData } from '../../../shared/models/industry';
 import { CommonModule } from '@angular/common';
 import { TabViewModule } from "primeng/tabview";
 import { TableModule } from "primeng/table";
-
 @Component({
-  selector: 'app-course-detail',
+  selector: 'app-chapter-detail',
   standalone: true,
   imports: [StandardTitleComponent, StandardCardComponent, StandardInputLabelComponent, DropdownModule, CalendarModule, InputTextModule, StandardOptionsComponent, InputSwitchModule, EditorModule, CommonModule, TabViewModule, TableModule],
-  templateUrl: './course-detail.component.html',
-  styleUrl: './course-detail.component.scss'
+  templateUrl: './chapter-detail.component.html',
+  styleUrl: './chapter-detail.component.scss'
 })
-export class CourseDetailComponent {
+export class ChapterDetailComponent {
   activeIndex: number = 1;
   industries = IndustryData
   buttons: ActionButton[] = [
     {
       icon: 'pi-plus',
-      label: 'Add Chapter',
-      action: 'add-chapter'
+      label: 'Add Lesson',
+      action: 'add-lesson'
     },
   ]
   thumbnail: string | null = null;
-  chapters = [
+  lessons = [
     { id: 1, name: 'Introduction to Angular', numericalOrder: 1, createdDate: '2025-08-01' },
     { id: 2, name: 'Components & Templates', numericalOrder: 2, createdDate: '2025-08-02' },
     { id: 3, name: 'Data Binding & Events', numericalOrder: 3, createdDate: '2025-08-03' },

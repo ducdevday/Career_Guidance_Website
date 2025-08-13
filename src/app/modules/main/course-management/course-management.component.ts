@@ -30,7 +30,6 @@ export class CourseManagementComponent {
       numLessons: '5',
       duration: '1h30p',
       status: 'New',
-
       createdBy: 'Duc Nguyen',
       createdDate: '2024-08-01'
     },
