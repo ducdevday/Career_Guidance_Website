@@ -1,0 +1,79 @@
+<app-standard-title title="Lesson Detail"></app-standard-title>
+<div class="mt-4">
+  <app-standard-card>
+    <app-standard-options
+      [showSave]="true"
+      [showClose]="true"
+      (buttonClick)="onActionClick($event)"
+      [buttons]="buttons"
+    ></app-standard-options>
+    <p-tabView [(activeIndex)]="activeIndex">
+      <p-tabPanel header="General">
+        <div class="flex flex-col gap-3">
+         <div>
+          <app-standard-input-label> Video Info </app-standard-input-label>
+          <p-table [value]="videos" stripedRows>
+           <ng-template pTemplate="header">
+             <tr>
+               <th>ID</th>
+               <th>Name</th>
+               <th>Duration</th>
+               <th>Capacity</th>
+               <th>Detail</th>
+             </tr>
+           </ng-template>
+           <ng-template pTemplate="body" let-video>
+             <tr>
+               <td class="text-sm text-blackShade-main font-normal">{{ video.id }}</td>
+               <td class="text-sm text-blackShade-main font-normal">{{ video.name }}</td>
+               <td class="text-sm text-blackShade-main font-normal">{{ video.duration }}</td>
+               <td class="text-sm text-blackShade-main font-normal">{{ video.capacity }}</td>
+               <td class="text-sm text-blackShade-main font-normal"><span class="text-sm text-primary-main font-bold cursor-pointer">Show</span></td>
+             </tr>
+           </ng-template>
+         </p-table>
+        </div> 
+         <div>
+            <app-standard-input-label> Name </app-standard-input-label>
+            <input
+              type="text"
+              pInputText
+              class="w-full"
+              placeholder="Title"
+              formControlName="title"
+            />
+          </div>
+          <div>
+           <app-standard-input-label> Description </app-standard-input-label>
+           <div class="card">
+             <p-editor [style]="{ height: '320px' }" />
+           </div>
+         </div>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Resources">
+       <app-standard-input-label> Resources </app-standard-input-label>
+       <p-table [value]="resources" stripedRows>
+        <ng-template pTemplate="header">
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Duration</th>
+            <th>Capacity</th>
+            <th>Detail</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-resource>
+          <tr>
+            <td class="text-sm text-blackShade-main font-normal">{{ resource.id }}</td>
+            <td class="text-sm text-blackShade-main font-normal">{{ resource.name }}</td>
+            <td class="text-sm text-blackShade-main font-normal">{{ resource.duration }}</td>
+            <td class="text-sm text-blackShade-main font-normal">{{ resource.capacity }}</td>
+            <td class="text-sm text-blackShade-main font-normal"><span class="text-sm text-primary-main font-bold cursor-pointer">Show</span></td>
+          </tr>
+        </ng-template>
+      </p-table>
+      </p-tabPanel>
+    </p-tabView>
+  </app-standard-card>
+</div>

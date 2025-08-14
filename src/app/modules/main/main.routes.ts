@@ -21,13 +21,14 @@ import { BlogDetailComponent } from './blog-detail/blog-detail.component';
 import { WorkshopDetailComponent } from './workshop-detail/workshop-detail.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
 import { ChapterDetailComponent } from './chapter-detail/chapter-detail.component';
+import { LessonDetailComponent } from './lesson-detail/lesson-detail.component';
 
 export const HOME_ROUTE = 'home';
 export const MY_COURSE_ROUTE = 'my-course';
 export const HISTORY_REGISTER = 'history-register';
 export const ACCOUNT_SETTING = 'account-setting';
 export const CHANGE_PASSWORD = 'change-password';
-export const DETAIL_COURSE = 'my-course/detail-course';
+
 export const ADMIN_DASHBOARD = 'admin-dashboard';
 export const BLOG_MANAGEMENT = 'blog-management';
 export const COURSE_MANAGEMENT = 'course-management';
@@ -35,13 +36,34 @@ export const MENTOR_MANAGEMENT = 'mentor-management';
 export const SCHOOL_MANAGEMENT = 'school-management';
 export const STUDENT_MANAGEMENT = 'student-management';
 export const WORKSHOP_MANAGEMENT = 'workshop-management';
-export const STUDENT_DETAIL = 'student-management/student-id';
-export const MENTOR_DETAIL = 'mentor-management/mentor-id';
-export const SCHOOL_DETAIL = 'school-management/school-id';
-export const BLOG_DETAIL = 'blog-management/blog-id';
-export const WORKSHOP_DETAIL = 'workshop-management/workshop-id';
-export const COURSE_DETAIL = 'course-management/course-id';
-export const CHAPTER_DETAIL = 'course-management/course-id/chapter-management/chapter-id';
+
+export const BLOG_DETAIL = (blogId: string | number) =>
+  `main/${BLOG_MANAGEMENT}/${blogId}`;
+
+export const STUDENT_DETAIL = (studentId: string | number) =>
+  `main/${STUDENT_MANAGEMENT}/${studentId}`;
+
+export const MENTOR_DETAIL = (mentorId: string | number) =>
+  `main/${MENTOR_MANAGEMENT}/${mentorId}`;
+
+export const SCHOOL_DETAIL = (schoolId: string | number) =>
+  `main/${SCHOOL_MANAGEMENT}/${schoolId}`;
+
+export const WORKSHOP_DETAIL = (workshopId: string | number) =>
+  `main/${WORKSHOP_MANAGEMENT}/${workshopId}`;
+
+export const COURSE_DETAIL = (courseId: string | number) =>
+  `main/${COURSE_MANAGEMENT}/${courseId}`;
+
+export const CHAPTER_DETAIL = (courseId: string | number, chapterId: string | number) =>
+  `main/${COURSE_MANAGEMENT}/${courseId}/chapter-management/${chapterId}`;
+
+export const LESSON_DETAIL = (
+  courseId: string | number,
+  chapterId: string | number,
+  lessonId: string | number
+) => `main/${COURSE_MANAGEMENT}/${courseId}/chapter-management/${chapterId}/lesson-management/${lessonId}`;
+
 
 export default [
   {
@@ -49,86 +71,58 @@ export default [
     canActivate: [authGuard],
     component: LayoutComponent,
     children: [
-      {
-        path: HOME_ROUTE,
-        component: HomeComponent,
-      },
-      {
-        path: MY_COURSE_ROUTE,
-        component: MyCourseComponent
-      },
-      {
-        path: HISTORY_REGISTER,
-        component: HistoryRegisterComponent
-      },
-      {
-        path: ACCOUNT_SETTING,
-        component: AccountSettingComponent
-      },
-      {
-        path: CHANGE_PASSWORD,
-        component: ChangePasswordComponent
-      },
-      {
-        path: ADMIN_DASHBOARD,
-        component: AdminDashboardComponent
-      },
-      {
-        path: BLOG_MANAGEMENT,
-        component: BlogManagementComponent
-      },
+      { path: '', pathMatch: 'full', redirectTo: HOME_ROUTE },
+
+      { path: HOME_ROUTE, component: HomeComponent },
+      { path: MY_COURSE_ROUTE, component: MyCourseComponent },
+      { path: HISTORY_REGISTER, component: HistoryRegisterComponent },
+      { path: ACCOUNT_SETTING, component: AccountSettingComponent },
+      { path: CHANGE_PASSWORD, component: ChangePasswordComponent },
+
+      { path: ADMIN_DASHBOARD, component: AdminDashboardComponent },
+
+      // BLOG
+      { path: BLOG_MANAGEMENT, component: BlogManagementComponent },
+      { path: `${BLOG_MANAGEMENT}/:blogId`, component: BlogDetailComponent },
+
+      // COURSE (có phân cấp chapter/lesson)
       {
         path: COURSE_MANAGEMENT,
-        component: CourseManagementComponent
+        children: [
+          { path: '', component: CourseManagementComponent },
+          { path: ':courseId', component: CourseDetailComponent },
+          {
+            path: ':courseId/chapter-management/:chapterId',
+            children: [
+              { path: '', component: ChapterDetailComponent },
+              { path: 'lesson-management/:lessonId', component: LessonDetailComponent }
+            ]
+          }
+        ]
       },
-      {
-        path: MENTOR_MANAGEMENT,
-        component: MentorManagementComponent
-      },
-      {
-        path: SCHOOL_MANAGEMENT,
-        component: SchoolManagementComponent
-      },
-      {
-        path: STUDENT_MANAGEMENT,
-        component: StudentManagementComponent
-      },
-      {
-        path: WORKSHOP_MANAGEMENT,
-        component: WorkshopManagementComponent
-      },
-      {
-        path: STUDENT_DETAIL,
-        component: StudentDetailComponent
-      },
-      {
-        path: MENTOR_DETAIL,
-        component: MentorDetailComponent
-      },
-      {
-        path: SCHOOL_DETAIL,
-        component: SchoolDetailComponent
-      },
-      {
-        path: BLOG_DETAIL,
-        component: BlogDetailComponent
-      },
-      {
-        path: WORKSHOP_DETAIL,
-        component: WorkshopDetailComponent
-      },
-      {
-        path: COURSE_DETAIL,
-        component: CourseDetailComponent
-      },
-      {
-        path: CHAPTER_DETAIL,
-        component: ChapterDetailComponent
-      }
+
+      // MENTOR
+      { path: MENTOR_MANAGEMENT, component: MentorManagementComponent },
+      { path: `${MENTOR_MANAGEMENT}/:mentorId`, component: MentorDetailComponent },
+
+      // SCHOOL
+      { path: SCHOOL_MANAGEMENT, component: SchoolManagementComponent },
+      { path: `${SCHOOL_MANAGEMENT}/:schoolId`, component: SchoolDetailComponent },
+
+      // STUDENT
+      { path: STUDENT_MANAGEMENT, component: StudentManagementComponent },
+      { path: `${STUDENT_MANAGEMENT}/:studentId`, component: StudentDetailComponent },
+
+      // WORKSHOP
+      { path: WORKSHOP_MANAGEMENT, component: WorkshopManagementComponent },
+      { path: `${WORKSHOP_MANAGEMENT}/:workshopId`, component: WorkshopDetailComponent },
     ],
   },
-  {
-    path: DETAIL_COURSE,
-    component: DetailCourseComponent
-  }
+
+  // Trang chi tiết course public (nếu bạn muốn tách ngoài layout main)
+  { path: 'my-course/detail-course', component: DetailCourseComponent },
+
+  // Redirects
+  { path: '', pathMatch: 'full', redirectTo: 'main' },
+  { path: '**', redirectTo: 'main' }
 ] as Routes;
